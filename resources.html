@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Javascript development tools - resources</title>
+
+<script type="application/javascript" src="resources.js"></script>
+
+<style>
+.closed + dd { display : none }
+</style>
+
+</head>
+
+<body>
+<noscript>
+Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
+</noscript>
+
+<dl id="list"></dl>
+
+<script type="application/javascript">
+
+function element(tag,attributes,children) {
+   var e = document.createElement(tag);
+   for (var a in attributes) e.setAttribute(a,attributes[a]);
+   for (var c in children) e.appendChild(children[c]);
+   return e;
+}
+
+function text(t) { return document.createTextNode(t) }
+
+function entry(r) {
+  return [element("dt",{},[element("a",{"href":r.url}, [text(r.name)])])
+         ,element("dd",{},[text(r.description)])];
+}
+
+function normalize(category) { return category.replace(/\s/,'-') }
+
+function toggle(target) {
+  target.className=(target.className==="closed")?"open":"closed";
+}
+
+var list    = document.getElementById("list");
+var entries = {}, categories = [];
+
+resources.map(function(r){
+  r.categories.map( function(cat){
+    cat in entries || ((entries[cat] = []) && categories.push(cat));
+    entries[cat].push(r)
+  })
+});
+
+categories.map(function(cat) {
+  list.appendChild( element("dt",{"class":"closed"
+                                 ,"onclick":"toggle(this)"},[
+                      element("a",{"name":normalize(cat)},[text(cat)])
+                      ]) );
+  list.appendChild( element("dd",{},[
+                      element("dl",{},[].concat.apply([],entries[cat].map(entry)))
+                      ]) );
+});
+
+</script>
+
+</body>
+
+</html>
