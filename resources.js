@@ -4,11 +4,6 @@
 //       document licenses?
 //       escape for HTML
 
-// for other languages compiled to js, and further parsing-related links, see
-// 
-//   https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS
-//   http://altjs.org/
-
 var resources = [
 
 { "name"        : "PEG.js"
@@ -62,6 +57,24 @@ var resources = [
 { "name"        : "SpiderMonkey"
 , "url"         : "https://developer.mozilla.org/SpiderMonkey"
 , "description" : ["SpiderMonkey is Mozilla's JavaScript engine written in C/C++. It is used in various Mozilla products, including Firefox, and is available under MPL/GPL/LGPL tri-license.  The most recent standalone source code release implements JavaScript 1.8.5, and is largely the same engine that shipped with Firefox 4."]
+, "categories"  : ["Javascript engines"]
+},
+
+{ "name"        : "Rhino"
+, "url"         : "http://www.mozilla.org/rhino/"
+, "description" : ["Rhino is an open-source implementation of JavaScript written entirely in Java. It is typically embedded into Java applications to provide scripting to end users."]
+, "categories"  : ["Javascript engines"]
+},
+
+{ "name"        : "v8"
+, "url"         : "http://code.google.com/p/v8/"
+, "description" : ["V8 is Google's open source JavaScript engine.  V8 is written in C++ and is used in Google Chrome, the open source browser from Google.  V8 implements ECMAScript as specified in ECMA-262, 5th edition, and runs on Windows (XP or newer), Mac OS X (10.5 or newer), and Linux systems that use IA-32, x64, or ARM processors.  V8 can run standalone, or can be embedded into any C++ application."]
+, "categories"  : ["Javascript engines"]
+},
+
+{ "name"        : "JavaScriptCore"
+, "url"         : "http://www.webkit.org/projects/javascript/index.html"
+, "description" : ["This is the project page for WebKit's JavaScript implementation. WebKit's JavaScript engine, JavaScriptCore, based on KJS, is a framework separate from WebCore and WebKit, and is used on Mac OS X for applications other than web page JavaScript."]
 , "categories"  : ["Javascript engines"]
 },
 
@@ -248,6 +261,12 @@ var resources = [
 , "categories"  : ["Debuggers", "Consoles"]
 },
 
+{ "name"        : "Console API"
+, "url"         : "http://getfirebug.com/wiki/index.php/Console_API"
+, "description" : ["Firebug adds a global variable named 'console' to all web pages loaded in Firefox. This object contains many methods that allow you to write to the Firebug console to expose information that is flowing through your scripts."]
+, "categories"  : ["Consoles"]
+},
+
 { "name"        : "Firebug Lite"
 , "url"         : "http://getfirebug.com/firebuglite"
 , "description" : ["Firebug Lite: doing the Firebug way, anywhere. Compatible with all major browsers: IE6+, Firefox, Opera, Safari and Chrome. Same look and feel as Firebug. Inspect HTML and modify style in real-time. Powerful console logging functions. Rich representation of DOM elements. Extend Firebug Lite and add features to make it even more powerful."]
@@ -267,7 +286,25 @@ var resources = [
 //  internet explorer
 //  node/v8
 
-{ "name"        : "google chrome developer tools"
+{ "name"        : "F12 Developer Tools"
+, "url"         : "http://msdn.microsoft.com/en-us/ie/aa740478"
+, "description" : ["Internet Explorer 8 was the first browser to provide built-in developer tools to aid developers in rapid prototyping, testing, and debugging webpages, and allowing them to see their changes as they made them, directly in the browser. New in Internet Explorer 9 are a user-agent switching tool, a network traffic inspector, an improved JavaScript profiler, and integrated support for new web standards introduced with Internet Explorer 9."]
+, "categories"  : ["Debuggers", "Consoles"]
+},
+
+{ "name"        : "weinre - Web Inspector Remote"
+, "url"         : "http://phonegap.github.com/weinre/"
+, "description" : ["It's designed to work remotely, and in particular, to allow you debug web pages on a mobile device such as a phone."]
+, "categories"  : ["Debuggers", "Consoles","Remote debugging"]
+},
+
+{ "name"        : "Web Inspector"
+, "url"         : "http://trac.webkit.org/wiki/WebInspector"
+, "description" : ["The Web Inspector allows you to view the page source, live DOM hierarchy, script debugging, profiling and more!"]
+, "categories"  : ["Debuggers", "Consoles"]
+},
+
+{ "name"        : "Google Chrome Developer Tools"
 , "url"         : "http://code.google.com/intl/de-DE/chrome/devtools/"
 , "description" : ["The Developer Tools, bundled and available in Chrome, allows web developers and programmers deep access into the internals of the browser and their web application. The Developer Tools are heavily based on the WebKit Web Inspector, a part of the open source WebKit project."]
 , "categories"  : ["Debuggers", "Consoles","Remote debugging"]
@@ -373,14 +410,36 @@ var resources = [
 , "categories"  : ["Documentation generators"]
 },
 
+// TODO: sort out where these should go
+
+{ "name"        : "List of languages that compile to JS"
+, "url"         : "https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS"
+, "description" : [""]
+, "categories"  : ["Other resource listings"]
+},
+
+{ "name"        : "altJS"
+, "url"         : "http://altjs.org/"
+, "description" : ["altJS is a collection of languages and tools aimed at rebooting JavaScript and making it better. Everything you'll find on this page is designed to output code for use on the web or with JavaScript-enabled servers and devices. This site is a handy guide to what's new in the altJS universe, as well as a place to connect."]
+, "categories"  : ["Other resource listings"]
+},
+
+{ "name"        : "Firebug Research"
+, "url"         : "http://getfirebug.com/wiki/index.php/Firebug_Research"
+, "description" : ["Academic papers related to Firebug."]
+, "categories"  : ["Other resource listings"]
+},
+
 //engines/browsers
 //
 //  opera
 //  safari
 //  firefox
-//  narcissus
 //  internet explorer
 //  google chrome/v8?
 //  node/v8
+
+// papers/research links (such as firebug research)
+// mailing lists
 
 ];

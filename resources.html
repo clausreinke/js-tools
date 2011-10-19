@@ -17,6 +17,8 @@
 Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
 </noscript>
 
+<em>Click to expand or close topics. Updates and corrections are welcome!</em>
+
 <dl id="list"></dl>
 
 <script type="application/javascript">
@@ -32,7 +34,7 @@ function text(t) { return document.createTextNode(t) }
 
 function entry(r) {
   return [element("dt",{},[element("a",{"href":r.url}, [text(r.name)])])
-         ,element("dd",{},[text(r.description)])];
+         ,element("dd",{},[text(r.description.join(""))])];
 }
 
 function normalize(category) { return category.replace(/\s/,'-') }
