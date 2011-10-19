@@ -200,7 +200,7 @@ var resources = [
 
 { "name"        : "js_contracts"
 , "url"         : "https://github.com/urso/js_contracts"
-, "description" : "Type description combinators for javascript. js_contracts offers very simple dynamic type checking combinators to be used directly within your JavaScript programs/libraries or optionally as extensions by defining Signatures which will be mixed into your existing programs/libraries using Aspect Oriented Programming techniques. Due to the simplicity of the combinators one can insert even extensive type checks with very minimal effort.  Using Signatures to be mixed in one can opt to use Signatures while development and then leaving them out when deploying. Library authors may want to ship developer versions with Signature files and deployment versions without type checking (which will additionally reduce source size). So 'dynamic' type checking is fully optional and the extra cycles needed to do type checking can be omitted when deploying later."
+, "description" : ["Type description combinators for javascript. js_contracts offers very simple dynamic type checking combinators to be used directly within your JavaScript programs/libraries or optionally as extensions by defining Signatures which will be mixed into your existing programs/libraries using Aspect Oriented Programming techniques. Due to the simplicity of the combinators one can insert even extensive type checks with very minimal effort.  Using Signatures to be mixed in one can opt to use Signatures while development and then leaving them out when deploying. Library authors may want to ship developer versions with Signature files and deployment versions without type checking (which will additionally reduce source size). So 'dynamic' type checking is fully optional and the extra cycles needed to do type checking can be omitted when deploying later."]
 , "categories"  : ["Runtime contract checking"]
 },
  
@@ -312,13 +312,13 @@ var resources = [
 
 { "name"        : "Xebug"
 , "url"         : "https://github.com/tlrobinson/xebug"
-, "description" : "Xebug (say: zee-bug) is a universal debugger for JavaScript, written in JavaScript. It will work in any JavaScript environment that provides a blocking input API (the prompt() function or synchronous XMLHttpRequest in web browsers, for example) and the opportunity to intercept JavaScript code before it is evaluated (hooks in client-side loaders, or via a HTTP proxy, etc).  Xebug works by automatically instrumenting JavaScript code with hooks into Xebug, therefore it incurs a significant performance penalty when enabled.  Currently the instrumentation is done using the JavaScript parser included with the Narcissus JavaScript interpreter (though the interpreter itself is not used)."
+, "description" : ["Xebug (say: zee-bug) is a universal debugger for JavaScript, written in JavaScript. It will work in any JavaScript environment that provides a blocking input API (the prompt() function or synchronous XMLHttpRequest in web browsers, for example) and the opportunity to intercept JavaScript code before it is evaluated (hooks in client-side loaders, or via a HTTP proxy, etc).  Xebug works by automatically instrumenting JavaScript code with hooks into Xebug, therefore it incurs a significant performance penalty when enabled.  Currently the instrumentation is done using the JavaScript parser included with the Narcissus JavaScript interpreter (though the interpreter itself is not used)."]
 , "categories"  : ["Debuggers", "Consoles"]
 },
 
 { "name"        : "Crossfire"
 , "url"         : "http://getfirebug.com/wiki/index.php/Crossfire"
-, "description" : "Crossfire is a Firebug extension which implements a JSON protocol to allow remote clients (like an IDE or code editor) to connect to Firebug. One of the main goals of Crossfire is to provide a simple and straight-forward method for tools in other processes to obtain the same kind of information that Firebug has about the Web pages the user is debugging."
+, "description" : ["Crossfire is a Firebug extension which implements a JSON protocol to allow remote clients (like an IDE or code editor) to connect to Firebug. One of the main goals of Crossfire is to provide a simple and straight-forward method for tools in other processes to obtain the same kind of information that Firebug has about the Web pages the user is debugging."]
 , "categories"  : ["Remote debugging"]
 },
 
