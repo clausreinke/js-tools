@@ -398,6 +398,30 @@ var resources = [
 , "categories"  : ["Testing"]
 },
 
+{ "name"        : "Jasmine"
+, "url"         : "http://pivotal.github.com/jasmine/"
+, "description" : ["Jasmine is a behavior-driven development framework for testing your JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests. Jasmine can be run anywhere you can execute JavaScript: a static web page, your continuous integration environment, or server-side environments like Node.js."]
+, "categories"  : ["Testing"]
+},
+
+{ "name"        : "Google JS Test"
+, "url"         : "http://code.google.com/p/google-js-test/"
+, "description" : ["Google JS Test is a fast javascript unit testing framework that runs on the V8 engine, without needing to launch a full browser. Features include: Extremely fast test startup and execution time, without having to run a browser. Clean, readable output in the case of both passing and failing tests. A browser-based test runner that can simply be refreshed whenever JS is changed. Style and semantics that resemble Google Test for C++. A built-in mocking framework that requires minimal boilerplate code (e.g. no $tearDown or $verifyAll) with style and semantics based on the Google C++ Mocking Framework.","The trade-off is that since tests are run in V8 without a browser, there is no DOM available. You can still use Google JS Test for tests of DOM-manipulating code however."]
+, "categories"  : ["Testing"]
+},
+
+{ "name"        : "QUnit"
+, "url"         : "http://docs.jquery.com/QUnit"
+, "description" : ["QUnit is a powerful, easy-to-use, JavaScript test suite. It's used by the jQuery project to test its code and plugins but is capable of testing any generic JavaScript code (and even capable of testing JavaScript code on the server-side). QUnit is especially useful for regression testing: Whenever a bug is reported, write a test that asserts the existence of that particular bug. Then fix it and commit both. Every time you work on the code again, run the tests. If the bug comes up again - a regression - you'll spot it immediately and know how to fix it, because you know what code you just changed."]
+, "categories"  : ["Testing"]
+},
+
+{ "name"        : "JSCoverage"
+, "url"         : "http://siliconforks.com/jscoverage/"
+, "description" : ["JSCoverage is a tool that measures code coverage for JavaScript programs. Code coverage statistics show which lines of a program have been executed (and which have been missed). This information is useful for constructing comprehensive test suites (hence, it is often called test coverage). JSCoverage works by instrumenting the JavaScript code used in web pages. Code coverage statistics are collected while the instrumented JavaScript code is executed in a web browser. JSCoverage supports the complete language syntax described in the ECMAScript Language Specification (ECMA-262, 3rd edition). JSCoverage works with any modern standards-compliant web browser - including Internet Explorer (IE 6, 7, and 8), Firefox, Opera, Safari, and Google Chrome - on Microsoft Windows and GNU/Linux."]
+, "categories"  : ["Testing"]
+},
+
 { "name"        : "Selenium"
 , "url"         : "http://seleniumhq.org/"
 , "description" : ["Selenium automates browsers. That's it. What you do with that power is entirely up to you. Primarily it is for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can (and should!) also be automated as well.  Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks."]
@@ -439,7 +463,7 @@ var resources = [
 //  google chrome/v8?
 //  node/v8
 
-// papers/research links (such as firebug research)
+// papers/research links (such as firebug research, types)
 // mailing lists
 
 ];
