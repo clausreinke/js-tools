@@ -1,3 +1,6 @@
+----------------------------------------------------------------
+NOTE: this is the master branch - you want the gh-pages branch!]
+----------------------------------------------------------------
 
 js-tools is the mailing list for Javascript tool developers.
 
