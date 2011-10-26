@@ -12,7 +12,7 @@ to integrate, maintenance work cannot be shared, and there are many points of
 failure). If tool developers are aware of each other's work, there is a better
 chance of sharing common infrastructure (and the maintenance it needs).
 
-This list is meant for tool-related discussions that to not quite fit into
+This list is meant for tool-related discussions that do not quite fit into
 tool-specific lists (or for which no tool-specific lists exist), such as:
 
 - discovery/awareness: 
