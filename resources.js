@@ -84,6 +84,12 @@ var resources = [
 , "categories"  : ["Javascript parsers", "Javascript engines"]
 },
 
+{ "name"        : "PhantomJS"
+, "url"         : "http://www.phantomjs.org/"
+, "description" : ["PhantomJS is a command-line tool that packs and embeds WebKit. Literally it acts like any other WebKit-based web browser, except that nothing gets displayed to the screen (thus, the term headless). In addition to that, PhantomJS can be controlled or scripted using its JavaScript API. PhantomJS is an optimal solution for headless testing of web-based applications, site scraping, pages capture, SVG renderer, PDF converter and many other use cases."]
+, "categories"  : ["JavaScript engines","Testing"]
+},
+
 { "name"        : "JSLint"
 , "url"         : "http://www.jslint.com"
 , "description" : ["JSLint takes a JavaScript source and scans it. If it finds a problem, it returns a message describing the problem and an approximate location within the source. The problem is not necessarily a syntax error, although it often is. JSLint looks at some style conventions as well as structural problems. It does not prove that your program is correct. It just provides another set of eyes to help spot problems."]
@@ -207,13 +213,13 @@ var resources = [
 { "name"        : "uglify/burrito"
 , "url"         : "https://github.com/substack/node-burrito"
 , "description" : ["Given some source code and a function trace, walk the ast by expression, with a callback function that gets called with a node object."]
-, "categories"  : ["Traversal/transformation"]
+, "categories"  : ["Traversal"]
 },
 
 { "name"        : "uglify/treehugger"
 , "url"         : "https://github.com/ajaxorg/treehugger"
 , "description" : ["treehugger.js is a Javascript library for program processing. It has generic means to represent and manipulate (analyze, transform) abstract syntax trees (ASTs). It consists of three parts: A generic ASTs representation format, inspired by ATerms) that can be used to represent programs written in any language (Java, Ruby, Javascript). A set of generic traversals to query, manipulate and annotate these ASTs, inspired by Stratego/XT. A set of analyses for specific languages."]
-, "categories"  : ["Traversal/transformation"]
+, "categories"  : ["Traversal"]
 },
 
 //  narcissus/treehugger  (replaced by above)
@@ -222,13 +228,42 @@ var resources = [
 { "name"        : "js-traverse"
 , "url"         : "https://github.com/substack/js-traverse"
 , "description" : ["Traverse and transform objects by visiting every node on a recursive walk."]
-, "categories"  : ["Traversal/transformation"]
+, "categories"  : ["Traversal"]
 },
 
 { "name"        : "JSShaper"
 , "url"         : "https://github.com/olov/jsshaper"
 , "description" : ["JSShaper is an extensible framework for JavaScript syntax tree shaping. JSShaper and its plugins are implemented in JavaScript. Syntax tree shaping means performing complex manipulations to a syntax tree representation of your textual source code, and then turning it back into source code again. JSShaper goes very far to keep all your source code formatting, intendation, whitespace and comments."]
-, "categories"  : ["Traversal/transformation"]
+, "categories"  : ["Traversal","Source transformation"]
+},
+
+// TODO: sort out traversal and transformation tags:
+// traversal can support analysis and transformation,
+// code queries, ast transformation, source transformation,
+// general vs specific transformation: transpilers, instrumented code, ..
+
+{ "name"        : "stackedy"
+, "url"         : "https://github.com/substack/node-stackedy"
+, "description" : ["Roll your own stack traces and control program execution through AST manipulation."]
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "name"        : "bunker"
+, "url"         : "https://github.com/substack/node-bunker"
+, "description" : ["Bunker is a module to calculate code coverage using native javascript burrito AST trickery."]
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "name"        : "detective"
+, "url"         : "https://github.com/substack/node-detective"
+, "description" : ["Find all calls to require() no matter how crazily nested using a proper walk of the AST."]
+, "categories"  : ["Source queries"]
+},
+
+{ "name"        : "Browserify"
+, "url"         : "https://github.com/substack/node-browserify"
+, "description" : ["use npm modules in the browser; require()s work browser-side just as they do in node; coffee script just works; lots of node builtins just work: require('events'), require('path'), require('vm'), require('querystring'); lots of ways to compile; watch mode automatically recompiles your bundle when files change"]
+, "categories"  : ["(to be sorted)"]
 },
 
 { "name"        : "es-lab"
@@ -344,12 +379,20 @@ var resources = [
 , "categories"  : ["Programmable editors"]
 },
 
+// catch-all query to find plugins noone has mentioned explicitly yet
 { "name"        : "vim"
 , "url"         : "http://stackoverflow.com/search?q=javascript+vim"
 , "description" : ["Stackoverflow on using Vim for Javascript."]
 , "categories"  : ["Programmable editors"]
 },
 
+{ "name"        : "Local code navigation with scoped tags"
+, "url"         : "https://github.com/clausreinke/scoped_tags"
+, "description" : ["Scope-aware tag support for Vim, using extended tags file format with a field that indicates tag scope as a line:column range. We can then figure out which tags are in scope at cursor position, and in what range to search for other occurrences of a tag (blanking out nested scopes where our tag scope is shadowed). By giving the scopes as line:column-ranges, the handling of scopes can be mostly language-independent."]
+, "categories"  : ["Vim plugins"]
+},
+
+// catch-all query to find plugins noone has mentioned explicitly yet
 { "name"        : "emacs"
 , "url"         : "http://stackoverflow.com/search?q=javascript+emacs"
 , "description" : ["Stackoverflow on using Emacs for Javascript."]
@@ -428,10 +471,34 @@ var resources = [
 , "categories"  : ["Testing"]
 },
 
+{ "name"        : "testling"
+, "url"         : "https://github.com/substack/testling"
+, "description" : ["Run browser unit tests headlessly with jsdom locally and remotely with testling.com."]
+, "categories"  : ["Testing"]
+},
+
+{ "name"        : "JsDuck"
+, "url"         : "https://github.com/senchalabs/jsduck"
+, "description" : ["API documentation generator for Sencha JavaScript frameworks. sDuck aims to be a better documentation generator for Ext JS than the old ext-doc was. It is used by Sencha to document Ext JS 4, [Sencha Touch][touch] and several other products. The highlights of JSDuck are Markdown support and keeping you DRY by inferring a lot of information from code."]
+, "categories"  : ["Documentation generators"]
+},
+
+{ "name"        : "dox"
+, "url"         : "https://github.com/visionmedia/dox"
+, "description" : ["Dox is a JavaScript documentation generator written with node. Dox no longer generates an opinionated structure or style for your docs, it simply gives you a JSON representation, allowing you to use markdown and JSDoc-style tags."]
+, "categories"  : ["Documentation generators"]
+},
+
 { "name"        : "jsdoc-toolkit"
 , "url"         : "http://code.google.com/p/jsdoc-toolkit/"
 , "description" : ["JsDoc Toolkit is an application, written in JavaScript, for automatically generating template-formatted, multi-page HTML (or XML, JSON, or any other text-based) documentation from commented JavaScript source code."]
 , "categories"  : ["Documentation generators"]
+},
+
+{ "name"        : "PINF JavaScript Loader"
+, "url"         : "https://github.com/pinf/loader-js/"
+, "description" : ["Versatile & Complete Cross-Platform CommonJS JavaScript Module, Package & Program Loader (Status: BETA - Mostly stable API undergoing wider testing). The PINF JavaScript Loader asynchronously combines what you would traditionally call a package installer and class loader and is intended to be used as the core to all your JavaScript applications no matter what platform they run on. The loader allows for bootstrapping a state-of-the-art, consistent and portable CommonJS environment for any supported platform (on servers, in browsers, desktop applications, secure sandboxes, and embedded) and thus is ideally suited to be used as the target for the commonjs command (currently being standardized) and the development of cross-platform JavaScript applications and libraries that may be shared with the CommonJS ecosystem."]
+, "categories"  : ["Loaders"]
 },
 
 // TODO: sort out where these should go
