@@ -551,6 +551,37 @@ var resources = [
 , "categories"  : ["UI"]
 },
 
+{ "name"        : "js-tools"
+, "url"         : "http://groups.google.com/group/js-tools"
+, "description" : ["JavaScript Development Tools. Tools for JavaScript; tools in JavaScript. Discovering and integrating existing tools; implementation of new tools; shared tooling infrastructure; needed tools; research on tools and tool users."]
+, "categories"  : ["Mailing Lists"]
+},
+
+{ "name"        : "es-discuss"
+, "url"         : "https://mail.mozilla.org/listinfo/es-discuss"
+, "description" : ["Discussion of ECMAScript"]
+, "categories"  : ["Mailing Lists"]
+},
+
+{ "name"        : "commonjs"
+, "url"         : "http://groups.google.com/group/commonjs"
+, "description" : ["Creating a common JavaScript library with a focus on non-browser (ie server-side, command line, desktop) functionality."]
+, "categories"  : ["Mailing Lists"]
+},
+
+{ "name"        : "JSMentors"
+, "url"         : "http://jsmentors.com/"
+, "description" : ["Discussion of JavaScript, ECMAScript and Browser scripting. Discuss ECMA-262 standard; discuss different implementations of ECMA-262; discuss different host environments of JavaScript; discuss implementation of algorithms in JavaScript; discuss your library design; review your code; review your book on JavaScript topic; review your article on JavaScript topic;"]
+, "categories"  : ["Mailing Lists"]
+},
+
+
+{ "name"        : "nodejs"
+, "url"         : "http://groups.google.com/group/nodejs"
+, "description" : ["Discussion on Node.js"]
+, "categories"  : ["Mailing Lists"]
+},
+
 //engines/browsers
 //
 //  opera
