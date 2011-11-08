@@ -533,6 +533,18 @@ var resources = [
 , "categories"  : ["Other resource listings"]
 },
 
+{ "name"        : "ES Wiki"
+, "url"         : "http://wiki.ecmascript.org/doku.php"
+, "description" : ["This is a wiki for the ongoing specification work of Ecma TC39, the technical committee tasked with standardization of the ECMAScript programming language. Most of the wiki is world-readable, meaning that anyone can view the pages. Certain sections are restricted to members of the technical committee."]
+, "categories"  : ["Other resource listings"]
+},
+
+{ "name"        : "Mozilla Developer Network Doc Center"
+, "url"         : "https://developer.mozilla.org/docs"
+, "description" : [""]
+, "categories"  : ["Other resource listings"]
+},
+
 { "name"        : "Maqetta"
 , "url"         : "http://maqetta.org/"
 , "description" : ["Maqetta is an open source project that provides WYSIWYG visual authoring of HTML5 user interfaces. The Maqetta application itself is authored in HTML, and therefore runs in the browser without requiring additional plugins or downloads."]
