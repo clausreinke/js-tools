@@ -399,6 +399,12 @@ var resources = [
 , "categories"  : ["Programmable editors"]
 },
 
+{ "name"        : "Javascript Mode"
+, "url"         : "http://www.emacswiki.org/emacs/JavaScriptMode"
+, "description" : ["For a long while there was debate and back-and-forth about Javascript support in emacs. There were a number of different options, in various stages of maturity and completion. As of emacs 23.2, there is a standard major mode for editing javascript: js-mode. You can still use any javascript major mode you like, but the main one will probably be js-mode going forward.  js-mode is part of Emacs since version 23.2 (with an alias javascript-mode). It is derived and updated from Espresso mode."]
+, "categories"  : ["Emacs plugins"]
+},
+
 { "name"        : "cloud9"
 , "url"         : "http://www.cloud9ide.com/"
 , "description" : ["Cloud9 is a state-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime."]
@@ -495,6 +501,12 @@ var resources = [
 , "categories"  : ["Documentation generators"]
 },
 
+{ "name"        : "Docco"
+, "url"         : "http://jashkenas.github.com/docco/"
+, "description" : ["Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator. It produces HTML that displays your comments alongside your code. Comments are passed through Markdown, and code is passed through Pygments syntax highlighting. (while it was created for coffeescript, it works fine with plain javascript; it doesn't handle block comments at the moment -- just // style ones)"]
+, "categories"  : ["Documentation generators"]
+},
+
 { "name"        : "PINF JavaScript Loader"
 , "url"         : "https://github.com/pinf/loader-js/"
 , "description" : ["Versatile & Complete Cross-Platform CommonJS JavaScript Module, Package & Program Loader (Status: BETA - Mostly stable API undergoing wider testing). The PINF JavaScript Loader asynchronously combines what you would traditionally call a package installer and class loader and is intended to be used as the core to all your JavaScript applications no matter what platform they run on. The loader allows for bootstrapping a state-of-the-art, consistent and portable CommonJS environment for any supported platform (on servers, in browsers, desktop applications, secure sandboxes, and embedded) and thus is ideally suited to be used as the target for the commonjs command (currently being standardized) and the development of cross-platform JavaScript applications and libraries that may be shared with the CommonJS ecosystem."]
@@ -519,6 +531,12 @@ var resources = [
 , "url"         : "http://getfirebug.com/wiki/index.php/Firebug_Research"
 , "description" : ["Academic papers related to Firebug."]
 , "categories"  : ["Other resource listings"]
+},
+
+{ "name"        : "Maqetta"
+, "url"         : "http://maqetta.org/"
+, "description" : ["Maqetta is an open source project that provides WYSIWYG visual authoring of HTML5 user interfaces. The Maqetta application itself is authored in HTML, and therefore runs in the browser without requiring additional plugins or downloads."]
+, "categories"  : ["UI"]
 },
 
 //engines/browsers
