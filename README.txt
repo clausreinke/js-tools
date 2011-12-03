@@ -1,4 +1,20 @@
 
+This is the companion repository for the js-tools mailing list. Currently,
+it holds:
+
+  README.txt      you're reading it
+
+  index.html      entry page; all list pages and resources should be reachable
+                  from this; it also has an invitation to join the list; uses
+                  github pages feature, so you can link to it as 
+
+                  http://clausreinke.github.com/js-tools
+
+  resources.js    links to software, documentation, projects, blogs, .. 
+  resources.html  html page wrapper to present the data from resources.js
+
+-------------------------------------------------------------------------
+
 js-tools is the mailing list for Javascript tool developers.
 
 The main purpose is to give tool developers a forum for presenting, discussing
