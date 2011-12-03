@@ -10,6 +10,9 @@
 .closed + dd { display : none }
 </style>
 
+<style id="entry-types">
+</style>
+
 </head>
 
 <body>
@@ -17,7 +20,21 @@
 Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
 </noscript>
 
-<em>Click to expand or close topics. Updates and corrections are welcome!</em>
+<em>A list of resources for the <a href"http://clausreinke.github.com/js-tools/">js-tools mailing list</a>.  <a href="https://github.com/clausreinke/js-tools/tree/gh-pages">It is a github repo</a>. Updates and corrections are welcome!</em>
+
+<hr>
+
+<p id="buttons">
+<em>Click individual topics to open or close.</em><br>
+<button type=button onclick="setAll('closed','open')">Open all topics</button>
+<button type=button onclick="setAll('open','closed')">Close all topics</button>
+</p>
+
+<p id="checkboxes">
+<em>Filter by type of entry:</em>
+</p>
+
+<hr>
 
 <dl id="list"></dl>
 
@@ -33,8 +50,10 @@ function element(tag,attributes,children) {
 function text(t) { return document.createTextNode(t) }
 
 function entry(r) {
-  return [element("dt",{},[element("a",{"href":r.url}, [text(r.name)])])
-         ,element("dd",{},[text(r.description.join(""))])];
+  var classForType = r.type.replace(/\s/,'-');
+  return [element("dt",{"class":classForType},[element("a",{"href":r.url}, [text(r.name)])
+                                              ,element("em",{},[text(" ("+r.type+")")])])
+         ,element("dd",{"class":classForType},[text(r.description.join(""))])];
 }
 
 function normalize(category) { return category.replace(/\s/,'-') }
@@ -43,10 +62,27 @@ function toggle(target) {
   target.className=(target.className==="closed")?"open":"closed";
 }
 
+function setAll(from,to) {
+  if (from===to) return;
+  var elements = document.getElementsByClassName(from);
+  while(elements.length>0) { elements.item(0).className = to; }
+}
+
+function toggleEntryTypes() {
+  var boxes = document.getElementsByClassName("entryType");
+  var style = "";
+  for (var b=0; b<boxes.length; b++) {
+    var box = boxes.item(b);
+    style += '.'+box.name.replace(/\s/,'-')+"{display:"+(box.checked?"block":"none")+"}\n"
+  }
+  document.getElementById("entry-types").innerHTML = style;
+}
+
 var list    = document.getElementById("list");
-var entries = {}, categories = [];
+var entries = {}, categories = [], types = {};
 
 resources.map(function(r){
+  types["##"+r.type] = (types["##"+r.type] || 0) + 1;
   r.categories.map( function(cat){
     cat in entries || ((entries[cat] = []) && categories.push(cat));
     entries[cat].push(r)
@@ -62,6 +98,25 @@ categories.map(function(cat) {
                       element("dl",{},[].concat.apply([],entries[cat].map(entry)))
                       ]) );
 });
+
+(function() {
+  var typeboxes = element("form",{"id":"typeboxes"},[]);
+  for (var t in types) {
+    var type = t.substring(2);
+    if (types.hasOwnProperty(t)) {
+      typeboxes.appendChild(element("label"
+                                   ,{}
+                                   ,[element("input"
+                                            ,{"type":"checkbox"
+                                             ,"name":type
+                                             ,"class":"entryType"
+                                             ,"onchange":"toggleEntryTypes()"
+                                             ,"checked":true}
+                                            ,[]),text(type+"("+types[t]+")")]));
+    }
+  }
+  document.getElementById("checkboxes").appendChild(typeboxes);
+}());
 
 </script>
 
