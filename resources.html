@@ -8,6 +8,7 @@
 
 <style>
 .closed + dd { display : none }
+.hidden      { display : none }
 </style>
 
 <style id="entry-types">
@@ -20,14 +21,14 @@
 Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
 </noscript>
 
-<em>A list of resources for the <a href"http://clausreinke.github.com/js-tools/">js-tools mailing list</a>.  <a href="https://github.com/clausreinke/js-tools/tree/gh-pages">It is a github repo</a>. Updates and corrections are welcome!</em>
+<em>A list of resources for the <a href"http://clausreinke.github.com/js-tools/">js-tools mailing list</a>.  <a href="https://github.com/clausreinke/js-tools/tree/gh-pages">It is a github repo</a> - updates and corrections are welcome!</em>
 
 <hr>
 
 <p id="buttons">
-<em>Click individual topics to open or close.</em><br>
-<button type=button onclick="setAll('closed','open')">Open all topics</button>
-<button type=button onclick="setAll('open','closed')">Close all topics</button>
+<em>Click individual topics to open or close, or</em>
+<button id="open"   type=button onclick="setAll('closed','open')">open all topics</button>
+<button id="closed" class="hidden" type=button onclick="setAll('open','closed')">close all topics</button>
 </p>
 
 <p id="checkboxes">
@@ -63,6 +64,8 @@ function toggle(target) {
 }
 
 function setAll(from,to) {
+  document.getElementById(to).className   = "hidden";
+  document.getElementById(from).className = "";
   if (from===to) return;
   var elements = document.getElementsByClassName(from);
   while(elements.length>0) { elements.item(0).className = to; }
