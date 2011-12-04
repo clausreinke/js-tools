@@ -101,7 +101,7 @@ var resources = [
 , "name"        : "PhantomJS"
 , "url"         : "http://www.phantomjs.org/"
 , "description" : ["PhantomJS is a command-line tool that packs and embeds WebKit. Literally it acts like any other WebKit-based web browser, except that nothing gets displayed to the screen (thus, the term headless). In addition to that, PhantomJS can be controlled or scripted using its JavaScript API. PhantomJS is an optimal solution for headless testing of web-based applications, site scraping, pages capture, SVG renderer, PDF converter and many other use cases."]
-, "categories"  : ["JavaScript engines","Testing"]
+, "categories"  : ["Javascript engines","Testing"]
 },
 
 { "type"        : "project page"
@@ -160,6 +160,27 @@ var resources = [
 , "categories"  : ["Javascript parsers"]
 },
 
+{ "type"        : "project page"
+, "name"        : "Pretty Diff - The difference tool"
+, "url"         : "http://prettydiff.com"
+, "description" : ["File comparison tool to accurately diff between file versions regardless of comments or minification to the whitespace. This tool is written entirely in JavaScript and it can also beautify and minify HTML."]
+, "categories"  : ["Pretty printers","Source difference tools"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "syntux"
+, "url"         : "https://github.com/evilhackerdude/syntux"
+, "description" : ["A code beautifier with plugins."]
+, "categories"  : ["Pretty printers", "Source transformation"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Codie"
+, "url"         : "https://github.com/dmajda/codie"
+, "description" : ["Codie is a JavaScript template engine specialized in generating JavaScript code. You can use it to write tools such as compilers, template engines, various kinds of preprocessors or transformers - anything that produces more than few lines of JavaScript."]
+, "categories"  : ["Templates"]
+},
+
 { "type"        : "documentation"
 , "name"        : "JsonMLAST"
 , "url"         : "http://code.google.com/p/es-lab/wiki/JsonMLASTFormat"
@@ -200,6 +221,13 @@ var resources = [
 , "url"         : "http://code.google.com/p/closure-linter/"
 , "description" : ["The Closure Linter enforces the guidelines set by the Google JavaScript Style Guide. The linter handles style issues so that you can focus on the code."]
 , "categories"  : ["Linters"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "jshint-autofix"
+, "url"         : "https://github.com/goatslacker/jshint-autofix"
+, "description" : ["Meant to automatically fix your lint errors in a non-destructive way."]
+, "categories"  : ["Linters", "Source transformation"]
 },
 
 { "type"        : "github repo"
