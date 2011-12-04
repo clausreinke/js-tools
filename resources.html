@@ -8,7 +8,6 @@
 
 <style>
 .closed + dd { display : none }
-.hidden      { display : none }
 </style>
 
 <style id="entry-types">
@@ -27,8 +26,8 @@ Please enable Javascript, or view the <a href="resources.js">raw list of resourc
 
 <p id="buttons">
 <em>Click individual topics to open or close, or</em>
-<button id="open"   type=button onclick="setAll('closed','open')">open all topics</button>
-<button id="closed" class="hidden" type=button onclick="setAll('open','closed')">close all topics</button>
+<button type=button onclick="setAll('closed','open')">open all topics</button>
+<button type=button onclick="setAll('open','closed')">close all topics</button>
 </p>
 
 <p id="checkboxes">
@@ -64,8 +63,6 @@ function toggle(target) {
 }
 
 function setAll(from,to) {
-  document.getElementById(to).className   = "hidden";
-  document.getElementById(from).className = "";
   if (from===to) return;
   var elements = document.getElementsByClassName(from);
   while(elements.length>0) { elements.item(0).className = to; }
