@@ -20,7 +20,7 @@
 Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
 </noscript>
 
-<em>A list of resources for the <a href"http://clausreinke.github.com/js-tools/">js-tools mailing list</a>.  <a href="https://github.com/clausreinke/js-tools/tree/gh-pages">It is a github repo</a> - updates and corrections are welcome!</em>
+<em>A list of resources for the <a href="http://clausreinke.github.com/js-tools/">js-tools mailing list</a>. Descriptions are extracted from the resources we link to.  <a href="https://github.com/clausreinke/js-tools/tree/gh-pages">The resources list is in a github repo</a> - updates and corrections are welcome!</em>
 
 <hr>
 
@@ -32,6 +32,8 @@ Please enable Javascript, or view the <a href="resources.js">raw list of resourc
 
 <p id="checkboxes">
 <em>Filter by type of entry:</em>
+<button type=button onclick="setAllFilters(false)">deselect all</button>
+<button type=button onclick="setAllFilters(true)">select all</button>
 </p>
 
 <hr>
@@ -51,9 +53,12 @@ function text(t) { return document.createTextNode(t) }
 
 function entry(r) {
   var classForType = r.type.replace(/\s/,'-');
-  return [element("dt",{"class":classForType},[element("a",{"href":r.url}, [text(r.name)])
-                                              ,element("em",{},[text(" ("+r.type+")")])])
-         ,element("dd",{"class":classForType},[text(r.description.join(""))])];
+  return [element("dt",{"class":classForType}
+                      ,[element("a",{"href":r.url}, [text(r.name)])
+                       ,element("em",{},[text(" ("+r.type+")"
+                                        +(r.published ? ", "+r.published : "") )])])
+         ,element("dd",{"class":classForType}
+                      ,[text(r.description.join(""))])];
 }
 
 function normalize(category) { return category.replace(/\s/,'-') }
@@ -76,6 +81,14 @@ function toggleEntryTypes() {
     style += '.'+box.name.replace(/\s/,'-')+"{display:"+(box.checked?"block":"none")+"}\n"
   }
   document.getElementById("entry-types").innerHTML = style;
+}
+
+function setAllFilters(value) {
+  var boxes = document.getElementsByClassName("entryType");
+  for (var b=0; b<boxes.length; b++) {
+    var box = boxes.item(b).checked = value;
+  }
+  toggleEntryTypes();
 }
 
 var list    = document.getElementById("list");
@@ -112,7 +125,7 @@ categories.map(function(cat) {
                                              ,"class":"entryType"
                                              ,"onchange":"toggleEntryTypes()"
                                              ,"checked":true}
-                                            ,[]),text(type+"("+types[t]+")")]));
+                                            ,[]),text(type+"("+types[t]+") ")]));
     }
   }
   document.getElementById("checkboxes").appendChild(typeboxes);
