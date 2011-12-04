@@ -269,7 +269,7 @@ var resources = [
 , "name"        : "js_contracts"
 , "url"         : "https://github.com/urso/js_contracts"
 , "description" : ["Type description combinators for javascript. js_contracts offers very simple dynamic type checking combinators to be used directly within your JavaScript programs/libraries or optionally as extensions by defining Signatures which will be mixed into your existing programs/libraries using Aspect Oriented Programming techniques. Due to the simplicity of the combinators one can insert even extensive type checks with very minimal effort.  Using Signatures to be mixed in one can opt to use Signatures while development and then leaving them out when deploying. Library authors may want to ship developer versions with Signature files and deployment versions without type checking (which will additionally reduce source size). So 'dynamic' type checking is fully optional and the extra cycles needed to do type checking can be omitted when deploying later."]
-, "categories"  : ["Runtime contract checking"]
+, "categories"  : ["Contracts"]
 },
  
 { "type"        : "github repo"
@@ -700,6 +700,94 @@ var resources = [
 , "categories"  : ["Mailing Lists"]
 },
 
+{ "type"        : "screencast"  // should this be "collection"?
+, "name"        : "Firebug Screencasts"
+, "url"         : "http://getfirebug.com/screencasts"
+, "description" : ["Firebug Screencasts"]
+, "categories"  : ["Screencasts","Debuggers"]
+},
+
+{ "type"        : "screencast"
+, "name"        : "Cloud9 IDE's videos"
+, "url"         : "http://vimeo.com/user5080429/videos/sort:date"
+, "description" : ["Cloud9 IDE's videos"]
+, "categories"  : ["Screencasts","IDEs"]
+},
+
+{ "type"        : "blog post"
+, "name"        : "25 Secrets of the Browser Developer Tools"
+, "url"         : "http://www.andismith.com/blog/2011/11/25-dev-tool-secrets/"
+, "description" : ["Are you using the developer tools to their full potential? The biggest positive about the developer tools is that they are incredibly easy to use, but as a result developers often miss out on a large proportion of the functionality provided. Inspired by a video talk by Paul Irish and Pavel Feldman, I’ve compiled a list of 'secrets' of the developer console. I’m not expecting every one of these to be unknown to you, but hopefully some of these will help you to become an even better web developer.","If you have any more secrets, feel free to leave a comment at the end of the article and I’ll update the post once I have verified them. I’d also love to know what developer console you use as your primary development tool, let me know!"]
+, "categories"  : ["Debuggers"]
+},
+
+{ "type"        : "blog post"
+, "name"        : "Beginner Guide to Page and Script Debugging with Chrome"
+, "url"         : "http://www.codeproject.com/KB/trace/BeginChromeDebug.aspx"
+, "description" : ["As you begin to develop HTML and JavaScript ladden webpages, tracking down bugs becomes an important issue. Identifying them quickly and easily has become a whole lot easier with the features introduced in modern browsers. However, knowing the capabilities of the browser console and what it can do for you is often a mystery. In this article I hope to shed light on some of the key features and how you can use them to your advantage.","To start with we will look at the various components of the Chrome Console, and then start to look at how we can identify coding errors, manipulate JavaScript Object, modify the CSS, step through JavaScript code and watch values, rewrite and test JavaScript code on the fly, call methods, and run jQuery calls against the DOM all from within the console."]
+, "categories"  : ["Debuggers"]
+},
+
+{ "type"        : "slides"
+, "name"        : "Remote debugging landscape"
+, "authors"     : "Ryan Seddon"
+, "url"         : "http://thecssninja.com/talks/remote_debugging/"
+, "description" : ["Slides (with embedded screencasts); introduction and overview on currently available remote debugging options; a call to bring the diverse paths back together."]
+, "categories"  : ["Talks","Remote debugging"]
+},
+
+{ "type"        : "project page"
+, "name"        : "JSConTest - Contract-Driven Testing of JavaScript Code"
+, "url"         : "http://proglang.informatik.uni-freiburg.de/jscontest/"
+, "description" : ["JSContest is a tool that enhances JavaScript with simple, type-like contracts and provides a framework for monitoring and guided random testing of programs against these contracts at the same time. Function contracts in JSContest serve a dual role as specifications of the input/output behavior and as test case generators. Generation of test data for a contract is principally random, but can be guided by annotations on the contract to achieve higher coverage. Annotations may indicate dependencies among parameters or between parameters and the result or they may select lightweight program analyses, the results of which influence the choice of test data."]
+, "categories"  : ["Contracts","Testing"]
+},
+
+{ "type"        : "publication"
+, "name"        : "Fast and Precise Hybrid Type Inference for JavaScript"
+, "authors"     : "(unknown)"
+, "published"   : "draft paper 2011"
+, "url"         : "http://people.mozilla.org/~lmesa/ti-draft.pdf"
+, "description" : ["JavaScript performance is often bound by its dynamically typed nature. Compilers do not have access to static type information, making generation of efficient, type-specialized machine code difficult. To avoid incurring extra overhead on the programmer and to improve the performance of deployed JavaScript programs, we seek to solve this problem by inferring types. Existing type inference algorithms for JavaScript are often too computationally intensive and too imprecise -especially in the case of JavaScript’s extensible objects- to enable optimizations. Both problems arise from performing purely static analyses. In this paper we present a hybrid type inference algorithm for JavaScript based on points-to analysis. Our algorithm is fast, in that it pays for itself in the optimizations it enables. Our algorithm is also precise, generating information that closely reflects the program’s actual behavior, by augmenting static analysis with run-time type barriers.","We showcase an implementation forMozilla Firefox’s JavaScript engine, demonstrating both performance gains and viability. Through integration with the just-in-time (JIT) compiler in Firefox, we have improved its performance on major benchmarks and JavaScript-heavy websites by up to 50%. This is scheduled to become the default compilation mode in Firefox 9."]
+, "categories"  : ["Publications","Type inference"]
+},
+
+{ "type"        : "publication"
+, "name"        : "The Impact of Optional Type Information on JIT Compilation of Dynamically Typed Languages"
+, "authors"     : "Chang, Mathiske, Smith, Chaudhuri, Gal, Bebenita, Wimmer, Franz"
+, "published"   : "Dynamic Languages Symposium 2011"
+, "url"         : "http://www.masonchang.com/storage/papers/dls05-chang.pdf"
+, "description" : ["between untyped and type annotated source code. We present a comprehensive performance evaluation of two different JIT compilers in the context of ActionScript, a production-quality optionally typed language. One JIT compiler is optimized for quick compilation rather than JIT compiled code performance. The second JIT compiler is a more aggressively optimizing compiler, performing both high-level and low-level optimizations.","We evaluate both JIT compilers directly on the same benchmark suite, measuring their performance changes across fully typed, partially typed, and untyped code. Such evaluations are especially relevant to dynamically typed languages such as JavaScript, which are currently evaluating the idea of adding optional type annotations.  We demonstrate that low-level optimizations rarely accelerate the program enough to pay back the investment into performing them in an optionally typed language. Our experiments and data demonstrate that high-level optimizations are required to improve performance by any significant amount."]
+, "categories"  : ["Publications"]  // TODO: "types"?
+},
+
+{ "type"        : "publication"
+, "name"        : "Access Permission Contracts for Scripting Languages"
+, "authors"     : "Heidegger, Bieniusa, Thiemann"
+, "published"   : "POPL 2012"
+, "url"         : "http://proglang.informatik.uni-freiburg.de/jscontest/popl-2012-tech.pdf"
+, "description" : ["The ideal software contract fully specifies the behavior of an operation.  Often, in particular in the context of scripting languages, a full specification may be cumbersome to state and may not even be desired. In such cases, a partial specification, which describes selected aspects of the behavior, may be used to raise the confidence in an implementation of the operation to a reasonable level.","We propose a novel kind of contract for object-based languages that specifies the side effects of an operation with access permissions.  An access permission contract uses sets of access paths to express read and write permissions for the properties of the objects accessible from the operation.","We specify a monitoring semantics for access permission contracts and implement this semantics in a contract system for JavaScript. We prove soundness and stability of violation under increasing aliasing for our semantics.","Applications of access permission contracts include enforcing modularity, test-driven development, program understanding, and regression testing. With respect to testing and understanding, we find that adding access permissions to contracts increases the effectiveness of error detection through contract monitoring by 6-13%."]
+, "categories"  : ["Publications","Contracts"]
+},
+
+{ "type"        : "publication"
+, "name"        : "Towards a Program Logic for JavaScript"
+, "authors"     : "Gardner, Maffeis, Smith"
+, "published"   : "POPL 2012"
+, "url"         : "http://www.doc.ic.ac.uk/~gds/TowardsProgramLogicJavaScriptPOPL2012.pdf"
+, "description" : ["JavaScript has become the most widely used language for clientside web programming. The dynamic nature of JavaScript makes understanding its code notoriously difficult, leading to buggy programs and a lack of adequate static-analysis tools. We believe that logical reasoning has much to offer JavaScript: a simple description of program behaviour, a clear understanding of module boundaries, and the ability to verify security contracts.","We introduce a program logic for reasoning about a broad subset of JavaScript, including challenging features such as prototype inheritance and with. We adapt ideas from separation logic to provide tractable reasoning about JavaScript code: reasoning about easy programs is easy; reasoning about hard programs is possible.  We prove a strong soundness result. All libraries written in our subset and proved correct with respect to their specifications will be well-behaved, even when called by arbitrary JavaScript code."]
+, "categories"  : ["Publications"]
+},
+
+{ "type"        : "publication"
+, "name"        : "FeedLack Detects Missing Feedback in Web Applications"
+, "authors"     : "Ko, Zhang"
+, "published"   : "CHI 2011"
+, "url"         : "http://faculty.washington.edu/ajko/papers/Ko2011FeedLack.pdf"
+, "description" : ["While usability methods such as user studies and inspections can reveal a wide range of problems, they do so for only a subset of an application’s features and states. We present FeedLack, a tool that explores the full range of web applications’ behaviors for one class of usability problems, namely that of missing feedback. It does this by enumerating control flow paths originating from user input, identifying paths that lack output-affecting code. FeedLack was applied to 330 applications; of the 129 that contained input handlers and did not contain syntax errors, 115 were successfully analyzed, resulting in 647 warnings. Of these 36% were missing crucial feedback; 34% were executable and missing feedback, but followed conventions that made feedback inessential; 18% were scenarios that did produce feedback; 12% could not be executed. We end with a discussion of the viability of FeedLack as a usability testing tool."]
+, "categories"  : ["Publications"]  // TODO: "Analysis"?
+},
+
 //engines/browsers
 //
 //  opera
@@ -710,6 +798,8 @@ var resources = [
 //  node/v8
 
 // papers/research links (such as firebug research, types)
-// mailing lists
+// paper authors list, at least in the JSON; what about the HTML?
+
+// we might want multiple urls per entry (project page, github repo, mailing list,..)
 
 ];
