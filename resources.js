@@ -104,6 +104,13 @@ var resources = [
 , "categories"  : ["Javascript engines","Testing"]
 },
 
+{ "type"        : "github repo"
+, "name"        : "lv5"
+, "url"         : "https://github.com/Constellation/iv"
+, "description" : ["lv5 is an ECMA262 5.1 engine, written in C++. This thread on es-discuss has more info on features and test262 results: https://mail.mozilla.org/pipermail/es-discuss/2011-October/017528.html ."]
+, "categories"  : ["JavaScript engine"]
+},
+
 { "type"        : "project page"
 , "name"        : "JSLint"
 , "url"         : "http://www.jslint.com"
@@ -207,6 +214,34 @@ var resources = [
 , "url"         : "http://www.jshint.com/"
 , "description" : ["JSHint is a community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team's coding conventions.  It is very flexible so you can easily adjust it to your particular coding guidelines and the environment you expect your code to execute in."]
 , "categories"  : ["Javascript parsers", "Linters"]
+},
+
+{ "type"        : "project page"
+, "name"        : "iv / js"
+, "url"         : "http://constellation.github.com/iv/js/index.html"
+, "description" : ["ES5 parser written in JS. Syntax highlighting based on this: http://constellation.github.com/iv/js/syntax.html ."]
+, "categories"  : ["Javascript parsers"]
+},
+
+{ "type"        : "project page"
+, "name"        : "iv / js : ES.next"
+, "url"         : "http://constellation.github.com/iv/js/es.next.html"
+, "description" : ["ES.next (current draft) parser written in JS."]
+, "categories"  : ["Javascript parsers"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Az"
+, "url"         : "https://github.com/Constellation/az"
+, "description" : ["ECMAScript Analyzing tools, written in C++. I wrote recovery JS parser (this can parses broken JS and JSDoc), ported DoctorJS algorithm to C++, and am now creating JS completion backend."]
+, "categories"  : ["Javascript parsers","Static analysis"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Esprima"
+, "url"         : "https://github.com/ariya/esprima"
+, "description" : ["Esprima (esprima.org) is an experimental ECMAScript (also popularly known as JavaScript) parsing infrastructure for multipurpose analysis. It is also written in ECMAScript.  Esprima can be used in a web browser or in a Node.js application."]
+, "categories"  : ["Javascript parsers"]
 },
 
 { "type"        : "github repo"
@@ -692,12 +727,18 @@ var resources = [
 , "categories"  : ["Mailing Lists"]
 },
 
-
 { "type"        : "mailing list"
 , "name"        : "nodejs"
 , "url"         : "http://groups.google.com/group/nodejs"
 , "description" : ["Discussion on Node.js"]
 , "categories"  : ["Mailing Lists"]
+},
+
+{ "type"        : "mailing list"
+, "name"        : "WebDebugProtocol"
+, "url"         : "http://groups.google.com/group/webdebugprotocol"
+, "description" : ["Discuss, design, develop a remote debug protocol for Web-based applications.  The core idea is a protocol that would support a Firebug-like user interface client attached to a web-browser-like runtime server.  Variations, sub and super sets, library design, all related ideas welcome."]
+, "categories"  : ["Mailing Lists","Remote debugging"]
 },
 
 { "type"        : "screencast"  // should this be "collection"?
@@ -726,6 +767,20 @@ var resources = [
 , "url"         : "http://www.codeproject.com/KB/trace/BeginChromeDebug.aspx"
 , "description" : ["As you begin to develop HTML and JavaScript ladden webpages, tracking down bugs becomes an important issue. Identifying them quickly and easily has become a whole lot easier with the features introduced in modern browsers. However, knowing the capabilities of the browser console and what it can do for you is often a mystery. In this article I hope to shed light on some of the key features and how you can use them to your advantage.","To start with we will look at the various components of the Chrome Console, and then start to look at how we can identify coding errors, manipulate JavaScript Object, modify the CSS, step through JavaScript code and watch values, rewrite and test JavaScript code on the fly, call methods, and run jQuery calls against the DOM all from within the console."]
 , "categories"  : ["Debuggers"]
+},
+
+{ "type"        : "blog"
+, "name"        : "Orion news [tag js-tools]"
+, "url"         : "http://planetorion.org/news/tag/js-tools/"
+, "description" : ["The js-tools tag covers JavaScript tooling for Orion in particular (or follow the whole blog to hear about other generic IDE features, HTML/CSS tooling, etc)."]
+, "categories"  : ["Blogs"]
+},
+
+{ "type"        : "blog"
+, "name"        : "don't code today [tag jstools]"
+, "url"         : "http://ariya.ofilabs.com/tag/jstools"
+, "description" : ["The jstools tag is mostly related to PhantomJS, and in future also Esprima."]
+, "categories"  : ["Blogs"]
 },
 
 { "type"        : "slides"
@@ -788,6 +843,15 @@ var resources = [
 , "categories"  : ["Publications"]  // TODO: "Analysis"?
 },
 
+{ "type"        : "publication"
+, "name"        : "Crossfire - Multiprocess, Cross-Browser, Open-Web Debugging Protocol"
+, "authors"     : "Collins, Barton"
+, "published"   : "SPLASH 2011"
+, "url"         : "http://getfirebug.com/doc/crossfire/crossfire-splash-2011.pdf"
+, "description" : ["We present Crossfire, a system and protocol designed to enable debugging ofWeb pages in another process or machine.  Issues specific to any oneWeb browser are abstracted by the protocol and implementation, allowing a new generation of OpenWeb development tools to be implemented.We discuss the major refactoring of Firebug, the open source Web debugging tool to use Crossfire and the interplay between goals and resources that such an effort requires. In addition to the cross-browser focus of the protocol, we also discuss support for extensions which themselves will be cross-browser and client-server."]
+, "categories"  : ["Publications","Remote debugging"]
+},
+
 //engines/browsers
 //
 //  opera
@@ -800,6 +864,6 @@ var resources = [
 // papers/research links (such as firebug research, types)
 // paper authors list, at least in the JSON; what about the HTML?
 
-// we might want multiple urls per entry (project page, github repo, mailing list,..)
-
+// we might want to group multiple urls per entry (project page, github repo, mailing list,..)
+// separate from url grouping, it would be good to handle urls in descriptions
 ];
