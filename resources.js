@@ -24,7 +24,7 @@ var resources = [
 , "name"        : "PanPG"
 , "url"         : "https://github.com/azatoth/PanPG"
 , "description" : ["PanPG is a parser generator which reads a PEG description of a grammar and writes a packrat parser in pure JavaScript."]
-, "categories"  : ["Parser combinators"]
+, "categories"  : ["Parser generators"]
 },
 
 { "type"        : "github repo"
