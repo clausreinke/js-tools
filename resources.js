@@ -55,6 +55,13 @@ var resources = [
 , "categories"  : ["Parser generators"]
 },
 
+{ "type"        : "project page"
+, "name"        : "PanPG"
+, "url"         : "http://boshi.inimino.org/3box/PanPG/about.html"
+, "description" : ["PanPG is a parser generator. Input is a parser expression grammar (PEG) and output is a parser written in JavaScript."]
+, "categories"  : ["Parser generators"]
+},
+
 { "type"        : "documentation"
 , "name"        : "SpiderMonkey Parser API"
 , "url"         : "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
@@ -108,7 +115,7 @@ var resources = [
 , "name"        : "lv5"
 , "url"         : "https://github.com/Constellation/iv"
 , "description" : ["lv5 is an ECMA262 5.1 engine, written in C++. This thread on es-discuss has more info on features and test262 results: https://mail.mozilla.org/pipermail/es-discuss/2011-October/017528.html ."]
-, "categories"  : ["JavaScript engine"]
+, "categories"  : ["Javascript engines"]
 },
 
 { "type"        : "project page"
@@ -298,6 +305,13 @@ var resources = [
 , "url"         : "http://code.google.com/p/closure-compiler/"
 , "description" : ["The Closure Compiler is a tool for making JavaScript download and run faster. It is a true compiler for JavaScript. Instead of compiling from a source language to machine code, it compiles from JavaScript to better JavaScript. It parses your JavaScript, analyzes it, removes dead code and rewrites and minimizes what's left. It also checks syntax, variable references, and types, and warns about common JavaScript pitfalls."]
 , "categories"  : ["Type checking","Minifiers"]
+},
+
+{ "type"        : "github page"
+, "name"        : "The Strobe Type Checker for JavaScript"
+, "url"         : "https://github.com/brownplt/strobe"
+, "description" : ["TODO: documentation"]
+, "categories"  : ["Type checking"]
 },
 
 { "type"        : "github repo"
