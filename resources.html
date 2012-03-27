@@ -70,12 +70,21 @@ function toggle(target) {
 
 function setAll(from,to) {
   if (from===to) return;
-  var elements = document.getElementsByClassName(from);
-  while(elements.length>0) { elements.item(0).className = to; }
+  var elements = document.getElementsByTagName("dt");
+  for (var i=0; i<elements.length; i++) {
+    if (elements.item(i).className===from)
+      elements.item(i).className = to;
+  }
+}
+
+function getEntryTypeCheckboxes() {
+  // not in older browsers
+  // return document.getElementsByClassName("entryType");
+  return document.getElementsByTagName("input"); // need filter if adding inputs
 }
 
 function toggleEntryTypes() {
-  var boxes = document.getElementsByClassName("entryType");
+  var boxes = getEntryTypeCheckboxes();
   var style = "";
   for (var b=0; b<boxes.length; b++) {
     var box = boxes.item(b);
@@ -85,7 +94,7 @@ function toggleEntryTypes() {
 }
 
 function setAllFilters(value) {
-  var boxes = document.getElementsByClassName("entryType");
+  var boxes = getEntryTypeCheckboxes();
   for (var b=0; b<boxes.length; b++) {
     var box = boxes.item(b).checked = value;
   }
