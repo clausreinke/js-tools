@@ -2,9 +2,13 @@
 <html>
 <head>
 
+<meta name="description" content="A collection of Javascript tools resources
+  for the js-tools mailing list."/>
+
 <title>Javascript development tools - resources</title>
 
 <script type="application/javascript" src="resources.js"></script>
+<script type="application/javascript" src="categories.js"></script>
 
 <style>
 .closed + dd { display : none }
@@ -102,7 +106,7 @@ function setAllFilters(value) {
 }
 
 var list    = document.getElementById("list");
-var entries = {}, categories = [], types = {};
+var entries = {}, categories = [], types = {}, list_groups = {};
 
 resources.map(function(r){
   types["##"+r.type] = (types["##"+r.type] || 0) + 1;
@@ -112,14 +116,45 @@ resources.map(function(r){
   })
 });
 
+(function(){
+  for (var g in groups)
+    if (groups.hasOwnProperty(g)) {
+      list.appendChild( element("dt",{"class":"closed"
+                                     ,"onclick":"toggle(this)"},[
+                          element("a",{"name":normalize(g)},[text(g)])
+                          ]) );
+      list_groups[g] = element("dd",{},[ ]);
+
+      if (groups[g])
+        groups[g].map(function(cat){
+          list_groups[g].appendChild( element("dt",{"class":"closed"
+                                                   ,"onclick":"toggle(this)"},[
+                                      element("a",{"name":normalize(cat)},[text(cat)])
+                                      ]) );
+
+          list_groups[g].appendChild( element("dd",{},[
+                                      element("dl",{},[].concat.apply([],entries[cat].map(entry)))
+                                      ]) );
+        });
+      else
+        list_groups[g] = element("dd",{},[
+                         element("dl",{},[].concat.apply([],entries[g].map(entry)))
+                         ])
+
+      list.appendChild( list_groups[g] );
+    }
+})();
+
 categories.map(function(cat) {
-  list.appendChild( element("dt",{"class":"closed"
+  if (!list_groups[ group[cat] || cat ]) {
+    list.appendChild( element("dt",{"class":"closed"
                                  ,"onclick":"toggle(this)"},[
                       element("a",{"name":normalize(cat)},[text(cat)])
                       ]) );
-  list.appendChild( element("dd",{},[
+    list.appendChild( element("dd",{},[
                       element("dl",{},[].concat.apply([],entries[cat].map(entry)))
                       ]) );
+  }
 });
 
 (function() {

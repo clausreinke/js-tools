@@ -66,7 +66,7 @@ var resources = [
 , "name"        : "SpiderMonkey Parser API"
 , "url"         : "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
 , "description" : ["Recent builds of the standalone SpiderMonkey shell include a reflection of the SpiderMonkey parser, made available as a JavaScript API. This makes it easier to write tools in JavaScript that manipulate JavaScript source programs, such as syntax highlighters, static analyses, translators, compilers, obfuscators, etc."]
-, "categories"  : ["Javascript parsers","Javascript AST formats"]
+, "categories"  : ["Parsers","AST formats"]
 },
 
 { "type"        : "project page"
@@ -101,7 +101,7 @@ var resources = [
 , "name"        : "Narcissus"
 , "url"         : "https://github.com/mozilla/narcissus"
 , "description" : ["Narcissus is a JavaScript interpreter written in pure JavaScript (i.e., a meta-circular evaluator), using the SpiderMonkey engine.  Originally a proof-of-concept by Brendan Eich, Narcissus is being revived as a test-bed for rapidly prototyping new language features for the JavaScript language (as well as the ECMAScript standard)."]
-, "categories"  : ["Javascript parsers", "Javascript engines"]
+, "categories"  : ["Parsers", "Javascript engines"]
 },
 
 { "type"        : "project page"
@@ -122,56 +122,56 @@ var resources = [
 , "name"        : "JSLint"
 , "url"         : "http://www.jslint.com"
 , "description" : ["JSLint takes a JavaScript source and scans it. If it finds a problem, it returns a message describing the problem and an approximate location within the source. The problem is not necessarily a syntax error, although it often is. JSLint looks at some style conventions as well as structural problems. It does not prove that your program is correct. It just provides another set of eyes to help spot problems."]
-, "categories"  : ["Javascript parsers", "Linters"]
+, "categories"  : ["Parsers", "Linters"]
 },
 
 { "type"        : "github repo"
 , "name"        : "uglify"
 , "url"         : "https://github.com/mishoo/UglifyJS/"
 , "description" : ["This package implements a general-purpose JavaScript parser/compressor/beautifier toolkit. It is developed on NodeJS, but it should work on any JavaScript platform supporting the CommonJS module system (and if your platform of choice doesn’t support CommonJS, you can easily implement it, or discard the exports.* lines from UglifyJS sources).  The tokenizer/parser generates an abstract syntax tree from JS code. You can then traverse the AST to learn more about the code, or do various manipulations on it."]
-, "categories"  : ["Javascript parsers", "Minifiers", "Pretty printers"]
+, "categories"  : ["Parsers", "Minifiers", "Pretty printers"]
 },
 
 { "type"        : "github repo"
 , "name"        : "ZeParser"
 , "url"         : "https://github.com/qfox/zeparser"
 , "description" : ["JavaScript parser."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "source code"
 , "name"        : "ANTLR"
 , "url"         : "http://www.antlr.org/grammar/1206736738015/JavaScript.g"
 , "description" : ["Javascript grammar for ANTLR."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "project page"
 , "name"        : "ometa.js/esparser"
 , "url"         : "http://es-lab.googlecode.com/svn/trunk/site/esparser/index.html"
 , "description" : ["An OMeta-based parser for Ecmascript 5, written in Javascript, generating a JsonML-based AST."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "github repo"
 , "name"        : "jison/reflect.js"
 , "url"         : "https://github.com/zaach/reflect.js"
 , "description" : ["Reflect.js is a JavaScript (ES3 compatible) implementation of Mozilla's Parser API. It does not currently support some of Mozilla's extensions, such as generators, list comprehensions, for each, E4X, etc. but may eventually support ones that are, or become Harmony proposals. Builders are also supported."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "github repo"
 , "name"        : "javascript.peg.js"
 , "url"         : "https://github.com/dmajda/pegjs/blob/master/examples/javascript.pegjs"
 , "description" : ["JavaScript parser based on the grammar described in ECMA-262, 5th ed. (http://www.ecma-international.org/publications/standards/Ecma-262.htm). The parser builds a tree representing the parsed JavaScript, composed of basic JavaScript values, arrays and objects (basically JSON). It can be easily used by various JavaScript processors, transformers, etc."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "github repo"
 , "name"        : "jstr/es5.js"
 , "url"         : "https://github.com/clausreinke/jstr"
 , "description" : ["Incomplete/work-in-progress ECMAScript 5 grammar."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "project page"
@@ -199,14 +199,14 @@ var resources = [
 , "name"        : "JsonMLAST"
 , "url"         : "http://code.google.com/p/es-lab/wiki/JsonMLASTFormat"
 , "description" : ["The JsonML AST format used by the es-lab es5 parser."]
-, "categories"  : ["Javascript AST formats"]
+, "categories"  : ["AST formats"]
 },
 
 { "type"        : "documentation"
 , "name"        : "ES Wiki strawman:ast"
 , "url"         : "http://wiki.ecmascript.org/doku.php?id=strawman:ast"
 , "description" : ["A placeholder for a Harmony specification for a parser which parses ECMAScript text into a standard abstract syntax tree made up of ECMAScript objects."]
-, "categories"  : ["Javascript AST formats"]
+, "categories"  : ["AST formats"]
 },
 
 { "type"        : "project page"
@@ -220,35 +220,35 @@ var resources = [
 , "name"        : "JSHint"
 , "url"         : "http://www.jshint.com/"
 , "description" : ["JSHint is a community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team's coding conventions.  It is very flexible so you can easily adjust it to your particular coding guidelines and the environment you expect your code to execute in."]
-, "categories"  : ["Javascript parsers", "Linters"]
+, "categories"  : ["Parsers", "Linters"]
 },
 
 { "type"        : "project page"
 , "name"        : "iv / js"
 , "url"         : "http://constellation.github.com/iv/js/index.html"
 , "description" : ["ES5 parser written in JS. Syntax highlighting based on this: http://constellation.github.com/iv/js/syntax.html ."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "project page"
 , "name"        : "iv / js : ES.next"
 , "url"         : "http://constellation.github.com/iv/js/es.next.html"
 , "description" : ["ES.next (current draft) parser written in JS."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "github repo"
 , "name"        : "Az"
 , "url"         : "https://github.com/Constellation/az"
 , "description" : ["ECMAScript Analyzing tools, written in C++. I wrote recovery JS parser (this can parses broken JS and JSDoc), ported DoctorJS algorithm to C++, and am now creating JS completion backend."]
-, "categories"  : ["Javascript parsers","Static analysis"]
+, "categories"  : ["Parsers","Static analysis"]
 },
 
 { "type"        : "github repo"
 , "name"        : "Esprima"
 , "url"         : "https://github.com/ariya/esprima"
 , "description" : ["Esprima (esprima.org) is an experimental ECMAScript (also popularly known as JavaScript) parsing infrastructure for multipurpose analysis. It is also written in ECMAScript.  Esprima can be used in a web browser or in a Node.js application."]
-, "categories"  : ["Javascript parsers"]
+, "categories"  : ["Parsers"]
 },
 
 { "type"        : "github repo"
@@ -276,7 +276,7 @@ var resources = [
 , "name"        : "doctorjs"
 , "url"         : "https://github.com/mozilla/doctorjs"
 , "description" : ["A set of static analysis tools for JavaScript. jsctags is a ctags-compatible code indexing solution for JavaScript. Its interface and output are essentially identical to Exuberant Ctags, but, instead of simply parsing the JavaScript, jsctags uses a simple form of abstract interpretation to determine which symbols are exported. This allows jsctags to achieve much better results than Exuberant Ctags. Popular libraries such as jQuery and CommonJS modules can now be meaningfully indexed.","You can use jsctags to create tags files that are usable in many editors, from Vim to TextMate (via the CodeBrowser plugin). jsctags is slated to become a key component of the Bespin IDE, where it will be used to provide code completion.","jsctags is written entirely in JavaScript, using CommonJS modules, the node.js framework, and the Narcissus engine."]
-, "categories"  : ["Type inference", "Static analysis", "Tags generators"]
+, "categories"  : ["Type checking/inference", "Static analysis", "Tags generators"]
 },
 
 { "type"        : "github repo"
@@ -290,28 +290,28 @@ var resources = [
 , "name"        : "doctorjs--"
 , "url"         : "https://github.com/pcwalton/doctorjsmm"
 , "description" : ["DoctorJS-- is a simple static analysis tool for JavaScript, written in CoffeeScript. It uses a cut-down version of Brian Hackett's type inference algorithm, which is now part of the SpiderMonkey JavaScript engine (used in Firefox). Its output is in Exuberant Ctags format.","DoctorJS-- is neither as precise nor as sophisticated (nor, right now, as complete) as its big brother DoctorJS, but on the plus side it's designed to be small and easy to hack. If you need to do anything sophisticated, please use DoctorJS instead!"]
-, "categories"  : ["Type inference","Static analysis"]
+, "categories"  : ["Type checking/inference","Static analysis"]
 },
 
 { "type"        : "blog post"
 , "name"        : "JavaScript Type Inference in NetBeans"
 , "url"         : "http://blogs.oracle.com/tor/entry/javascript_type_inference"
 , "description" : ["Blog post detailing use of type inference for completion support."]
-, "categories"  : ["Type inference"]
+, "categories"  : ["Type checking/inference"]
 },
 
 { "type"        : "project page"
 , "name"        : "Closure Compiler"
 , "url"         : "http://code.google.com/p/closure-compiler/"
 , "description" : ["The Closure Compiler is a tool for making JavaScript download and run faster. It is a true compiler for JavaScript. Instead of compiling from a source language to machine code, it compiles from JavaScript to better JavaScript. It parses your JavaScript, analyzes it, removes dead code and rewrites and minimizes what's left. It also checks syntax, variable references, and types, and warns about common JavaScript pitfalls."]
-, "categories"  : ["Type checking","Minifiers"]
+, "categories"  : ["Type checking/inference","Minifiers"]
 },
 
 { "type"        : "github page"
 , "name"        : "The Strobe Type Checker for JavaScript"
 , "url"         : "https://github.com/brownplt/strobe"
 , "description" : ["TODO: documentation"]
-, "categories"  : ["Type checking"]
+, "categories"  : ["Type checking/inference"]
 },
 
 { "type"        : "github repo"
@@ -325,14 +325,14 @@ var resources = [
 , "name"        : "uglify/burrito"
 , "url"         : "https://github.com/substack/node-burrito"
 , "description" : ["Given some source code and a function trace, walk the ast by expression, with a callback function that gets called with a node object."]
-, "categories"  : ["Traversal"]
+, "categories"  : ["AST traversal"]
 },
 
 { "type"        : "github repo"
 , "name"        : "uglify/treehugger"
 , "url"         : "https://github.com/ajaxorg/treehugger"
 , "description" : ["treehugger.js is a Javascript library for program processing. It has generic means to represent and manipulate (analyze, transform) abstract syntax trees (ASTs). It consists of three parts: A generic ASTs representation format, inspired by ATerms) that can be used to represent programs written in any language (Java, Ruby, Javascript). A set of generic traversals to query, manipulate and annotate these ASTs, inspired by Stratego/XT. A set of analyses for specific languages."]
-, "categories"  : ["Traversal"]
+, "categories"  : ["AST traversal"]
 },
 
 //  narcissus/treehugger  (replaced by above)
@@ -342,14 +342,14 @@ var resources = [
 , "name"        : "js-traverse"
 , "url"         : "https://github.com/substack/js-traverse"
 , "description" : ["Traverse and transform objects by visiting every node on a recursive walk."]
-, "categories"  : ["Traversal"]
+, "categories"  : ["AST traversal"]
 },
 
 { "type"        : "github repo"
 , "name"        : "JSShaper"
 , "url"         : "https://github.com/olov/jsshaper"
 , "description" : ["JSShaper is an extensible framework for JavaScript syntax tree shaping. JSShaper and its plugins are implemented in JavaScript. Syntax tree shaping means performing complex manipulations to a syntax tree representation of your textual source code, and then turning it back into source code again. JSShaper goes very far to keep all your source code formatting, intendation, whitespace and comments."]
-, "categories"  : ["Traversal","Source transformation"]
+, "categories"  : ["AST traversal","Source transformation"]
 },
 
 // TODO: sort out traversal and transformation tags:
@@ -382,7 +382,7 @@ var resources = [
 , "name"        : "Browserify"
 , "url"         : "https://github.com/substack/node-browserify"
 , "description" : ["use npm modules in the browser; require()s work browser-side just as they do in node; coffee script just works; lots of node builtins just work: require('events'), require('path'), require('vm'), require('querystring'); lots of ways to compile; watch mode automatically recompiles your bundle when files change"]
-, "categories"  : ["(to be sorted)"]
+, "categories"  : ["Miscellaneous"]
 },
 
 { "type"        : "project page"
@@ -510,7 +510,7 @@ var resources = [
 , "name"        : "ace"
 , "url"         : "http://ace.ajax.org/"
 , "description" : ["Ace is a standalone code editor written in JavaScript. Our goal is to create a web based code editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse. It can be easily embedded in any web page and JavaScript application. Ace is developed as the primary editor for Cloud9 IDE and the successor of the Mozilla Skywriter (Bespin) Project."]
-, "categories"  : ["Programmable editors"]
+, "categories"  : ["Editors"]
 },
 
 // catch-all query to find plugins noone has mentioned explicitly yet
@@ -518,7 +518,7 @@ var resources = [
 , "name"        : "vim"
 , "url"         : "http://stackoverflow.com/search?q=javascript+vim"
 , "description" : ["Stackoverflow on using Vim for Javascript."]
-, "categories"  : ["Programmable editors"]
+, "categories"  : ["Editors"]
 },
 
 { "type"        : "github repo"
@@ -533,7 +533,7 @@ var resources = [
 , "name"        : "emacs"
 , "url"         : "http://stackoverflow.com/search?q=javascript+emacs"
 , "description" : ["Stackoverflow on using Emacs for Javascript."]
-, "categories"  : ["Programmable editors"]
+, "categories"  : ["Editors"]
 },
 
 { "type"        : "project page"
@@ -666,7 +666,7 @@ var resources = [
 , "name"        : "PINF JavaScript Loader"
 , "url"         : "https://github.com/pinf/loader-js/"
 , "description" : ["Versatile & Complete Cross-Platform CommonJS JavaScript Module, Package & Program Loader (Status: BETA - Mostly stable API undergoing wider testing). The PINF JavaScript Loader asynchronously combines what you would traditionally call a package installer and class loader and is intended to be used as the core to all your JavaScript applications no matter what platform they run on. The loader allows for bootstrapping a state-of-the-art, consistent and portable CommonJS environment for any supported platform (on servers, in browsers, desktop applications, secure sandboxes, and embedded) and thus is ideally suited to be used as the target for the commonjs command (currently being standardized) and the development of cross-platform JavaScript applications and libraries that may be shared with the CommonJS ecosystem."]
-, "categories"  : ["Loaders"]
+, "categories"  : ["Miscellaneous"]
 },
 
 // TODO: sort out where these should go
@@ -710,7 +710,7 @@ var resources = [
 , "name"        : "Maqetta"
 , "url"         : "http://maqetta.org/"
 , "description" : ["Maqetta is an open source project that provides WYSIWYG visual authoring of HTML5 user interfaces. The Maqetta application itself is authored in HTML, and therefore runs in the browser without requiring additional plugins or downloads."]
-, "categories"  : ["UI"]
+, "categories"  : ["Miscellaneous"]
 },
 
 { "type"        : "mailing list"
@@ -818,7 +818,7 @@ var resources = [
 , "published"   : "draft paper 2011"
 , "url"         : "http://people.mozilla.org/~lmesa/ti-draft.pdf"
 , "description" : ["JavaScript performance is often bound by its dynamically typed nature. Compilers do not have access to static type information, making generation of efficient, type-specialized machine code difficult. To avoid incurring extra overhead on the programmer and to improve the performance of deployed JavaScript programs, we seek to solve this problem by inferring types. Existing type inference algorithms for JavaScript are often too computationally intensive and too imprecise -especially in the case of JavaScript’s extensible objects- to enable optimizations. Both problems arise from performing purely static analyses. In this paper we present a hybrid type inference algorithm for JavaScript based on points-to analysis. Our algorithm is fast, in that it pays for itself in the optimizations it enables. Our algorithm is also precise, generating information that closely reflects the program’s actual behavior, by augmenting static analysis with run-time type barriers.","We showcase an implementation forMozilla Firefox’s JavaScript engine, demonstrating both performance gains and viability. Through integration with the just-in-time (JIT) compiler in Firefox, we have improved its performance on major benchmarks and JavaScript-heavy websites by up to 50%. This is scheduled to become the default compilation mode in Firefox 9."]
-, "categories"  : ["Publications","Type inference"]
+, "categories"  : ["Publications","Type checking/inference"]
 },
 
 { "type"        : "publication"
