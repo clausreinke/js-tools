@@ -513,6 +513,13 @@ var resources = [
 , "categories"  : ["Editors"]
 },
 
+{ "type"        : "project page"
+, "name"        : "CodeMirror"
+, "url"         : "http://codemirror.net/"
+, "description" : ["CodeMirror is a JavaScript library that can be used to create a relatively pleasant editor interface for code-like content ? computer programs, HTML markup, and similar. If a mode has been written for the language you are editing, the code will be coloured, and the editor will optionally help you with indentation.  This is the project page for CodeMirror 2, the currently more actively developed, and recommended version."]
+, "categories"  : ["Editors"]
+},
+
 // catch-all query to find plugins noone has mentioned explicitly yet
 { "type"        : "query"
 , "name"        : "vim"
@@ -582,6 +589,13 @@ var resources = [
 , "name"        : "vjet"
 , "url"         : "http://www.ebayopensource.org/index.php/VJET/"
 , "description" : ["VJET JavaScript IDE is an Eclipse plugin that provides a fully integrated development environment for JavaScript - from authoring, to execution/test, and debugging."]
+, "categories"  : ["IDEs"]
+},
+
+{ "type"        : "project page"
+, "name"        : "ShiftEdit"
+, "url"         : "http://shiftedit.net/"
+, "description" : ["ShiftEdit is an online IDE for developing PHP, Ruby, Python, Perl, HTML, CSS and JavaScript via FTP, SFTP and Dropbox."]
 , "categories"  : ["IDEs"]
 },
 
@@ -769,6 +783,13 @@ var resources = [
 , "categories"  : ["Screencasts","IDEs"]
 },
 
+{ "type"        : "screencast"
+, "name"        : "HTML5 Rocks - DevTools presentations"
+, "url"         : "http://www.html5rocks.com/en/slides#devtools"
+, "description" : ["The most recent presentations by Google Chrome Developer Relations and friends."]
+, "categories"  : ["Screencasts"]
+},
+
 { "type"        : "blog post"
 , "name"        : "25 Secrets of the Browser Developer Tools"
 , "url"         : "http://www.andismith.com/blog/2011/11/25-dev-tool-secrets/"
@@ -794,6 +815,13 @@ var resources = [
 , "name"        : "don't code today [tag jstools]"
 , "url"         : "http://ariya.ofilabs.com/tag/jstools"
 , "description" : ["The jstools tag is mostly related to PhantomJS, and in future also Esprima."]
+, "categories"  : ["Blogs"]
+},
+
+{ "type"        : "blog"
+, "name"        : "Mozilla Hacks [Developer Tools]"
+, "url"         : "http://hacks.mozilla.org/category/developer-tools/"
+, "description" : ["Developer Tools Articles. This site is here to highlight leading edge stuff that people are doing with Mozilla Firefox and the open web."]
 , "categories"  : ["Blogs"]
 },
 
