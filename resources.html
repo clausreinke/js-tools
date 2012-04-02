@@ -119,7 +119,7 @@ resources.map(function(r){
 (function(){
   for (var g in groups)
     if (groups.hasOwnProperty(g)) {
-      list.appendChild( element("dt",{"class":"closed"
+      list.appendChild( element("dt",{"class": groups[g] ? "open" : "closed"
                                      ,"onclick":"toggle(this)"},[
                           element("a",{"name":normalize(g)},[text(g)])
                           ]) );
