@@ -300,6 +300,13 @@ var resources = [
 , "categories"  : ["Type checking/inference"]
 },
 
+{ "type"        : "blog post"
+, "name"        : "VS 2008 JavaScript Intellisense"
+, "url"         : "http://weblogs.asp.net/scottgu/archive/2007/06/21/vs-2008-javascript-intellisense.aspx"
+, "description" : ["Blog post detailing use of type inference for completion support."]
+, "categories"  : ["Type checking/inference"]
+},
+
 { "type"        : "project page"
 , "name"        : "Closure Compiler"
 , "url"         : "http://code.google.com/p/closure-compiler/"
@@ -805,9 +812,9 @@ var resources = [
 },
 
 { "type"        : "blog"
-, "name"        : "Orion news [tag js-tools]"
-, "url"         : "http://planetorion.org/news/tag/js-tools/"
-, "description" : ["The js-tools tag covers JavaScript tooling for Orion in particular (or follow the whole blog to hear about other generic IDE features, HTML/CSS tooling, etc)."]
+, "name"        : "Orion news"
+, "url"         : "http://planetorion.org/news/"
+, "description" : ["News for the Eclipse Orion project. The js-tools tag covers JavaScript tooling for Orion in particular, but isn't always applied (or follow the whole blog to hear about other generic IDE features, HTML/CSS tooling, etc)."]
 , "categories"  : ["Blogs"]
 },
 
@@ -822,6 +829,13 @@ var resources = [
 , "name"        : "Mozilla Hacks [Developer Tools]"
 , "url"         : "http://hacks.mozilla.org/category/developer-tools/"
 , "description" : ["Developer Tools Articles. This site is here to highlight leading edge stuff that people are doing with Mozilla Firefox and the open web."]
+, "categories"  : ["Blogs"]
+},
+
+{ "type"        : "blog"
+, "name"        : "Opera Dragonfly - Bug control, accelerated"
+, "url"         : "http://my.opera.com/dragonfly/blog/"
+, "description" : ["Opera Dragonfly team blog."]
 , "categories"  : ["Blogs"]
 },
 
