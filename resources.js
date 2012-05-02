@@ -280,6 +280,13 @@ var resources = [
 },
 
 { "type"        : "github repo"
+, "name"        : "estr - ECMAScript traversals"
+, "url"         : "https://github.com/clausreinke/estr"
+, "description" : ["Commandline tool for working with Javascript code, currently supporting generation of scope-aware tags for local declarations and parameters."]
+, "categories"  : ["Tags generators"]
+},
+
+{ "type"        : "github repo"
 , "name"        : "doctorjs (with scoped tags)"
 , "url"         : "https://github.com/clausreinke/doctorjs"
 , "description" : ["A fork of doctorjs, supporting generation of scope-aware tags for local declarations and parameters."]
@@ -464,7 +471,7 @@ var resources = [
 
 { "type"        : "project page"
 , "name"        : "weinre - Web Inspector Remote"
-, "url"         : "http://phonegap.github.com/weinre/"
+, "url"         : "http://people.apache.org/~pmuellr/weinre/"
 , "description" : ["It's designed to work remotely, and in particular, to allow you debug web pages on a mobile device such as a phone."]
 , "categories"  : ["Debuggers", "Consoles","Remote debugging"]
 },
