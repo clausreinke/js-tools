@@ -12,6 +12,9 @@
 
 <style>
 .closed + dd { display : none }
+.yes:after   { content: ": Yes" }
+.no:after    { content: ": No" }
+.extras *    { border: thin solid; margin: 0.1em; background-color: lightgrey }
 </style>
 
 <style id="entry-types">
@@ -47,6 +50,11 @@ Please enable Javascript, or view the <a href="resources.js">raw list of resourc
 
 <script type="application/javascript">
 
+if (typeof Array.prototype.forEach!=="function")
+  Array.prototype.forEach = function(cb){
+    for (var i=0; i<this.length; i++) cb(this[i])
+  };
+
 function element(tag,attributes,children) {
    var e = document.createElement(tag);
    for (var a in attributes) e.setAttribute(a,attributes[a]);
@@ -56,6 +64,38 @@ function element(tag,attributes,children) {
 
 function text(t) { return document.createTextNode(t) }
 
+function extras(r) {
+  var info = [];
+  function extra(x) {
+    if (r.extras.hasOwnProperty(x))
+      if (typeof r.extras[x]==="boolean")
+        info.push(element("span",{"class":r.extras[x] ? "yes" : "no"},[text(x)]))
+      else if (r.extras[x].match(/^http/))
+        info.push(element("a",{"href":r.extras[x]} ,[text(x)]))
+      else
+        info.push(element("span",{},[text(x+': '+r.extras[x])]))
+  }
+
+  if (r.extras) {
+    if (r.categories.indexOf("Parsers")>-1)
+      ["AST"
+      ,"traversal"
+      ,"source locations"
+      ,"comments preserved"
+      ].forEach(extra);
+
+    ["active"
+    ,"mailing list"
+    ,"feed"
+    ,"author on js-tools"
+    ,"dependencies"
+    ].forEach(extra);
+
+    return [element("div",{"class":"extras"},info)]
+  } else
+    return []
+}
+
 function entry(r) {
   var classForType = r.type.replace(/\s/,'-');
   return [element("dt",{"class":classForType}
@@ -63,7 +103,7 @@ function entry(r) {
                        ,element("em",{},[text(" ("+r.type+")"
                                         +(r.published ? ", "+r.published : "") )])])
          ,element("dd",{"class":classForType}
-                      ,[text(r.description.join(""))])];
+                      ,extras(r).concat([text(r.description.join(""))]))];
 }
 
 function normalize(category) { return category.replace(/\s/,'-') }
