@@ -149,7 +149,15 @@ var resources = [
 { "type"        : "project page"
 , "name"        : "ometa.js/esparser"
 , "url"         : "http://es-lab.googlecode.com/svn/trunk/site/esparser/index.html"
-, "description" : ["An OMeta-based parser for Ecmascript 5, written in Javascript, generating a JsonML-based AST."]
+, "description" : ["An OMeta-based parser for Ecmascript 5, written in Javascript, generating a JsonML-based AST. Parser is generated from a fairly declarative Ometa PEG grammar and is designed to be compliant with ES5 (the grammar follows the ES5 spec as closely as possible). It is not designed for performance."]
+, "extras"       : { "dependencies" : "OMeta"
+                   , "AST": "http://code.google.com/p/es-lab/wiki/JsonMLASTFormat"
+                   , "traversal" : "http://code.google.com/p/es-lab/wiki/JsonMLASTFormat#Visitor_Protocol_Summary"
+                   , "source locations" : true
+                   , "comments preserved" : false
+                   , "author on js-tools" : true
+                   , "active" : false
+                   }
 , "categories"  : ["Parsers"]
 },
 
@@ -248,6 +256,16 @@ var resources = [
 , "name"        : "Esprima"
 , "url"         : "https://github.com/ariya/esprima"
 , "description" : ["Esprima (esprima.org) is an experimental ECMAScript (also popularly known as JavaScript) parsing infrastructure for multipurpose analysis. It is also written in ECMAScript.  Esprima can be used in a web browser or in a Node.js application."]
+, "extras"       : { "dependencies" : "none"
+                   , "AST": "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
+//                   , "traversal" : ""
+                   , "source locations" : true
+                   , "comments preserved" : true
+                   , "author on js-tools" : true
+                   , "active" : true
+//                   , "feed" : ""
+                   , "mailing list" : "http://groups.google.com/group/esprima"
+                   }
 , "categories"  : ["Parsers"]
 },
 
@@ -410,7 +428,17 @@ var resources = [
 , "name"        : "traceur"
 , "url"         : "http://code.google.com/p/traceur-compiler/"
 , "description" : ["Traceur is a JavaScript.next-to-JavaScript-of-today compiler that allows you to use features from the future today. Traceur's goal is to inform the design of new JavaScript features which are only valuable if they allow you to write better code. Traceur allows you to try out new and proposed language features today, helping you say what you mean in your code while informing the standards process.","Traceur is a compiler that takes Javascript including some new enhancements like classes and generators, and compiles it down to regular Javascript that runs in your browser. Traceur itself is written in Javascript, which means you can host the compiler directly in your pages and compile Traceur code on the fly."]
-, "categories"  : ["Language extensions"]
+, "extras"       : { "dependencies" : "none"
+                   , "AST": "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/trees/ParseTrees.js"
+                   , "traversal" : "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/ParseTreeVisitor.js"
+                   , "source locations" : true
+//                   , "comments preserved" : false
+//                   , "author on js-tools" : true
+                   , "active" : true
+                   , "feed" : "http://code.google.com/p/traceur-compiler/feeds"
+                   , "mailing list" : "http://groups.google.com/group/traceur-compiler-discuss"
+                   }
+, "categories"  : ["Parsers","Language extensions"]
 },
 
 { "type"        : "project page"
