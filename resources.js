@@ -258,7 +258,7 @@ var resources = [
 , "description" : ["Esprima (esprima.org) is an experimental ECMAScript (also popularly known as JavaScript) parsing infrastructure for multipurpose analysis. It is also written in ECMAScript.  Esprima can be used in a web browser or in a Node.js application."]
 , "extras"       : { "dependencies" : "none"
                    , "AST": "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
-//                   , "traversal" : ""
+                   , "traversal" : "http://code.google.com/p/esprima/issues/detail?id=250"
                    , "source locations" : true
                    , "comments preserved" : true
                    , "author on js-tools" : true
@@ -352,11 +352,18 @@ var resources = [
 , "description" : ["Type description combinators for javascript. js_contracts offers very simple dynamic type checking combinators to be used directly within your JavaScript programs/libraries or optionally as extensions by defining Signatures which will be mixed into your existing programs/libraries using Aspect Oriented Programming techniques. Due to the simplicity of the combinators one can insert even extensive type checks with very minimal effort.  Using Signatures to be mixed in one can opt to use Signatures while development and then leaving them out when deploying. Library authors may want to ship developer versions with Signature files and deployment versions without type checking (which will additionally reduce source size). So 'dynamic' type checking is fully optional and the extra cycles needed to do type checking can be omitted when deploying later."]
 , "categories"  : ["Contracts"]
 },
- 
+
 { "type"        : "github repo"
 , "name"        : "uglify/burrito"
 , "url"         : "https://github.com/substack/node-burrito"
 , "description" : ["Given some source code and a function trace, walk the ast by expression, with a callback function that gets called with a node object."]
+, "categories"  : ["AST traversal"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "falafel"
+, "url"         : "https://github.com/substack/falafel"
+, "description" : ["Transform the ast on a recursive walk. This module is like burrito, except that it uses esprima instead of uglify for friendlier-looking ast nodes."]
 , "categories"  : ["AST traversal"]
 },
 
