@@ -263,7 +263,7 @@ var resources = [
                    , "comments preserved" : true
                    , "author on js-tools" : true
                    , "active" : true
-//                   , "feed" : ""
+                   , "feed" : "http://ariya.ofilabs.com/tag/esprima"
                    , "mailing list" : "http://groups.google.com/group/esprima"
                    }
 , "categories"  : ["Parsers"]
@@ -694,28 +694,35 @@ var resources = [
 , "name"        : "JsDuck"
 , "url"         : "https://github.com/senchalabs/jsduck"
 , "description" : ["API documentation generator for Sencha JavaScript frameworks. sDuck aims to be a better documentation generator for Ext JS than the old ext-doc was. It is used by Sencha to document Ext JS 4, [Sencha Touch][touch] and several other products. The highlights of JSDuck are Markdown support and keeping you DRY by inferring a lot of information from code."]
-, "categories"  : ["Documentation generators"]
+, "categories"  : ["Documentation processors"]
 },
 
 { "type"        : "github repo"
 , "name"        : "dox"
 , "url"         : "https://github.com/visionmedia/dox"
 , "description" : ["Dox is a JavaScript documentation generator written with node. Dox no longer generates an opinionated structure or style for your docs, it simply gives you a JSON representation, allowing you to use markdown and JSDoc-style tags."]
-, "categories"  : ["Documentation generators"]
+, "categories"  : ["Documentation processors"]
 },
 
 { "type"        : "project page"
 , "name"        : "jsdoc-toolkit"
 , "url"         : "http://code.google.com/p/jsdoc-toolkit/"
 , "description" : ["JsDoc Toolkit is an application, written in JavaScript, for automatically generating template-formatted, multi-page HTML (or XML, JSON, or any other text-based) documentation from commented JavaScript source code."]
-, "categories"  : ["Documentation generators"]
+, "categories"  : ["Documentation processors"]
 },
 
 { "type"        : "project page"
 , "name"        : "Docco"
 , "url"         : "http://jashkenas.github.com/docco/"
 , "description" : ["Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator. It produces HTML that displays your comments alongside your code. Comments are passed through Markdown, and code is passed through Pygments syntax highlighting. (while it was created for coffeescript, it works fine with plain javascript; it doesn't handle block comments at the moment -- just // style ones)"]
-, "categories"  : ["Documentation generators"]
+, "categories"  : ["Documentation processors"]
+},
+
+{ "type"        : "github page"
+, "name"        : "Doctrine"
+, "url"         : "http://constellation.github.com/doctrine/"
+, "description" : ["Doctrine parses JSDoc comment, can parse ES4 and closure-compiler like TypeExpression and some of JSDoc toolkit tags."]
+, "categories"  : ["Documentation processors"]
 },
 
 { "type"        : "github repo"

@@ -18,7 +18,7 @@ var groups = {
   ],
 
 "Javascript analysis": [
-   "Documentation generators"
+   "Documentation processors"
   ,"Linters"
   ,"Static analysis"
   ,"Tags generators"
