@@ -263,7 +263,7 @@ var resources = [
                    , "comments preserved" : true
                    , "author on js-tools" : true
                    , "active" : true
-                   , "feed" : "http://ariya.ofilabs.com/tag/esprima"
+                   , "blog" : "http://ariya.ofilabs.com/tag/esprima"
                    , "mailing list" : "http://groups.google.com/group/esprima"
                    }
 , "categories"  : ["Parsers"]
@@ -336,6 +336,10 @@ var resources = [
 , "name"        : "Closure Compiler"
 , "url"         : "http://code.google.com/p/closure-compiler/"
 , "description" : ["The Closure Compiler is a tool for making JavaScript download and run faster. It is a true compiler for JavaScript. Instead of compiling from a source language to machine code, it compiles from JavaScript to better JavaScript. It parses your JavaScript, analyzes it, removes dead code and rewrites and minimizes what's left. It also checks syntax, variable references, and types, and warns about common JavaScript pitfalls."]
+, "extras"      : { "source maps" : true
+                  , "blog" : "http://closuretools.blogspot.com/"
+                  , "mailing list" : "http://groups.google.com/group/closure-compiler-discuss"
+                  }
 , "categories"  : ["Type checking/inference","Minifiers"]
 },
 
@@ -439,6 +443,7 @@ var resources = [
                    , "AST": "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/trees/ParseTrees.js"
                    , "traversal" : "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/ParseTreeVisitor.js"
                    , "source locations" : true
+                   , "source maps" : true
 //                   , "comments preserved" : false
 //                   , "author on js-tools" : true
                    , "active" : true
@@ -460,6 +465,34 @@ var resources = [
 , "url"         : "https://github.com/allenwb/narcissus/blob/master/harmony-extensions.md"
 , "description" : ["This version of Narcissus supports the following experimental language extensions. Concise Method Properties in Object Literals. Comma Optional After Method and Accessor Properties in Object Literals. The <| Operator. super References in Methods. Object Extension Literals. Computed Property Names in Object Literals. To use these extensions njs must be invoked using the -H switch. Note that Narcissus already supports various other Harmony features such as const and let declarations."]
 , "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "blog post"
+, "name"        : "Introduction to JavaScript Source Maps"
+, "url"         : "http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/"
+, "description" : ["Have you ever found yourself wishing you could keep your client-side code readable and more importantly debuggable even after you've combined and minified it, without impacting performance? Well now you can through the magic of source maps."]
+, "categories"  : ["Source maps"]
+},
+
+{ "type"        : "documentation"
+, "name"        : "Source Map Revision 3 Proposal"
+, "url"         : "https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit?pli=1"
+, "description" : ["The original source map format (v1) was created by Joseph Schorr for use by Closure Inspector to enable source level debugging of optimized JavaScript code (although the format itself is language agnostic).  However, as the size of the projects using the source maps expanded the verbosity of the format started to be become a problem. The v2 was created trading some simplicity and flexibility to reduce to overall size of the source map. Even with the changes made with the v2 version of the format, the source map file size was limiting its usefulness.  The v3 format is based on suggestions made by podivilov."]
+, "categories"  : ["Source maps"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "mozilla  / source-map"
+, "url"         : "https://github.com/mozilla/source-map"
+, "description" : ["This is a library to generate and consume the source map format."]
+, "categories"  : ["Source maps"]
+},
+
+{ "type"        : "collection"
+, "name"        : "Source maps: languages, tools and other info"
+, "url"         : "https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info"
+, "description" : ["Source maps are awesome so I put a wiki together to collect info about all the tools, sites, languages and articles that talking about or using them."]
+, "categories"  : ["Source maps"]
 },
 
 { "type"        : "project page"
@@ -520,8 +553,13 @@ var resources = [
 
 { "type"        : "project page"
 , "name"        : "Google Chrome Developer Tools"
-, "url"         : "http://code.google.com/intl/de-DE/chrome/devtools/"
+, "url"         : "https://developers.google.com/chrome-developer-tools/"
 , "description" : ["The Developer Tools, bundled and available in Chrome, allows web developers and programmers deep access into the internals of the browser and their web application. The Developer Tools are heavily based on the WebKit Web Inspector, a part of the open source WebKit project."]
+, "extras"      : { "mailing list" : "https://groups.google.com/group/google-chrome-developer-tools/about"
+                  , "blog"         : "https://developers.google.com/chrome-developer-tools/docs/blog-posts"
+                  , "videos"       : "https://developers.google.com/chrome-developer-tools/docs/videos"
+//                  , "source maps" : true
+                  }
 , "categories"  : ["Debuggers", "Consoles","Remote debugging"]
 },
 
@@ -740,6 +778,13 @@ var resources = [
 },
 
 // TODO: sort out where these should go
+
+{ "type"        : "collection"
+, "name"        : "jswiki"
+, "url"         : "https://github.com/bebraw/jswiki/wiki"
+, "description" : ["This wiki indexes libraries and resources available for JavaScript. In addition it provides some starting points for newbies in form of Beginner's Resources. In case you want to contribute, do take a look at Meta first for some extra pointers. Happy hacking!"]
+, "categories"  : ["Other resource listings"]
+},
 
 { "type"        : "collection"
 , "name"        : "List of languages that compile to JS"

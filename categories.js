@@ -10,6 +10,7 @@ var groups = {
   ,"Source instrumentation"
   ,"Source transformation"
   ,"Language extensions"
+  ,"Source maps"
   ],
 
 "Formatted text processing": [

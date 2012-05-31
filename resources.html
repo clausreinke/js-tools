@@ -77,16 +77,16 @@ function extras(r) {
   }
 
   if (r.extras) {
-    if (r.categories.indexOf("Parsers")>-1)
-      ["AST"
-      ,"traversal"
-      ,"source locations"
-      ,"comments preserved"
-      ].forEach(extra);
-
-    ["active"
+    ["AST"
+    ,"traversal"
+    ,"source locations"
+    ,"source maps"
+    ,"comments preserved"
+    ,"active"
     ,"mailing list"
+    ,"blog"
     ,"feed"
+    ,"videos"
     ,"author on js-tools"
     ,"dependencies"
     ].forEach(extra);
