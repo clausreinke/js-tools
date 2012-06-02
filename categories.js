@@ -7,6 +7,7 @@ var groups = {
   ,"Templates"
   ,"Minifiers"
   ,"Source queries"
+  ,"Source difference tools"
   ,"Source instrumentation"
   ,"Source transformation"
   ,"Language extensions"
@@ -31,7 +32,6 @@ var groups = {
   ,"IDEs"
   ,"Vim plugins"
   ,"Emacs plugins"
-  ,"Source difference tools"
   ],
 
 "Javascript debugging and profiling": [

@@ -604,6 +604,8 @@ var resources = [
 , "name"        : "ace"
 , "url"         : "http://ace.ajax.org/"
 , "description" : ["Ace is a standalone code editor written in JavaScript. Our goal is to create a web based code editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse. It can be easily embedded in any web page and JavaScript application. Ace is developed as the primary editor for Cloud9 IDE and the successor of the Mozilla Skywriter (Bespin) Project."]
+, "extras"      : { "mailing list" : "http://groups.google.com/group/ace-discuss"
+                  }
 , "categories"  : ["Editors"]
 },
 
@@ -611,6 +613,8 @@ var resources = [
 , "name"        : "CodeMirror"
 , "url"         : "http://codemirror.net/"
 , "description" : ["CodeMirror is a JavaScript library that can be used to create a relatively pleasant editor interface for code-like content ? computer programs, HTML markup, and similar. If a mode has been written for the language you are editing, the code will be coloured, and the editor will optionally help you with indentation.  This is the project page for CodeMirror 2, the currently more actively developed, and recommended version."]
+, "extras"      : { "mailing list" : "http://groups.google.com/group/codemirror"
+                  }
 , "categories"  : ["Editors"]
 },
 
@@ -646,8 +650,12 @@ var resources = [
 
 { "type"        : "project page"
 , "name"        : "cloud9"
-, "url"         : "http://www.cloud9ide.com/"
+, "url"         : "http://c9.io/"
 , "description" : ["Cloud9 is a state-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime."]
+, "extras"      : { "mailing list" : "http://groups.google.com/group/cloud9-ide"
+                  , "blog"         : "http://c9.io/site/category/blog/"
+                  , "videos"       : "http://www.youtube.com/user/c9ide"
+                  }
 , "categories"  : ["IDEs"]
 },
 
@@ -655,6 +663,9 @@ var resources = [
 , "name"        : "orion"
 , "url"         : "http://wiki.eclipse.org/Orion"
 , "description" : ["Orion's objective is to create a browser-based open tool integration platform which is entirely focused on developing for the web, in the web. Tools are written in JavaScript and run in the browser. Unlike other attempts at creating browser-based development tools, this is not an IDE running in a single tab. Links work and can be shared. You can open a file in a new tab. Great care has been taken to provide a web experience for development."]
+, "extras"      : { "mailing list" : "https://dev.eclipse.org/mailman/listinfo/orion-dev"
+                  , "blog"         : "http://planetorion.org/news/"
+                  }
 , "categories"  : ["IDEs"]
 },
 
@@ -690,6 +701,9 @@ var resources = [
 , "name"        : "ShiftEdit"
 , "url"         : "http://shiftedit.net/"
 , "description" : ["ShiftEdit is an online IDE for developing PHP, Ruby, Python, Perl, HTML, CSS and JavaScript via FTP, SFTP and Dropbox."]
+, "extras"      : { "mailing list" : "https://groups.google.com/group/shiftedit/about"
+                  , "blog"         : "http://shiftedit.net/blog"
+                  }
 , "categories"  : ["IDEs"]
 },
 
@@ -875,13 +889,6 @@ var resources = [
 , "url"         : "http://groups.google.com/group/webdebugprotocol"
 , "description" : ["Discuss, design, develop a remote debug protocol for Web-based applications.  The core idea is a protocol that would support a Firebug-like user interface client attached to a web-browser-like runtime server.  Variations, sub and super sets, library design, all related ideas welcome."]
 , "categories"  : ["Mailing Lists","Remote debugging"]
-},
-
-{ "type"        : "screencast"
-, "name"        : "Cloud9 IDE's videos"
-, "url"         : "http://vimeo.com/user5080429/videos/sort:date"
-, "description" : ["Cloud9 IDE's videos"]
-, "categories"  : ["Screencasts","IDEs"]
 },
 
 { "type"        : "screencast"
