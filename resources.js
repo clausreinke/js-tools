@@ -499,6 +499,10 @@ var resources = [
 , "name"        : "Firebug"
 , "url"         : "http://getfirebug.com"
 , "description" : ["Firebug integrates with Firefox to put a wealth of web development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page."]
+, "extras"      : { "mailing list" : "http://groups.google.com/group/firebug"
+                  , "blog"   : "http://blog.getfirebug.com/"
+                  , "videos" : "http://getfirebug.com/screencasts"
+                  }
 , "categories"  : ["Debuggers", "Consoles"]
 },
 
@@ -520,6 +524,9 @@ var resources = [
 , "name"        : "Dragonfly"
 , "url"         : "http://www.opera.com/dragonfly/"
 , "description" : ["Fully-featured suite of developer tools, designed to make your job easier."]
+, "extras"      : { "blog"   : "http://my.opera.com/dragonfly/blog/"
+                  , "videos" : "http://www.youtube.com/watch?v=BeTzJ-HGLo4"
+                  }
 , "categories"  : ["Debuggers", "Consoles","Remote debugging"]
 },
 //  (also portable version?)
@@ -868,13 +875,6 @@ var resources = [
 , "url"         : "http://groups.google.com/group/webdebugprotocol"
 , "description" : ["Discuss, design, develop a remote debug protocol for Web-based applications.  The core idea is a protocol that would support a Firebug-like user interface client attached to a web-browser-like runtime server.  Variations, sub and super sets, library design, all related ideas welcome."]
 , "categories"  : ["Mailing Lists","Remote debugging"]
-},
-
-{ "type"        : "screencast"  // should this be "collection"?
-, "name"        : "Firebug Screencasts"
-, "url"         : "http://getfirebug.com/screencasts"
-, "description" : ["Firebug Screencasts"]
-, "categories"  : ["Screencasts","Debuggers"]
 },
 
 { "type"        : "screencast"
