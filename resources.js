@@ -343,10 +343,13 @@ var resources = [
 , "categories"  : ["Type checking/inference","Minifiers"]
 },
 
-{ "type"        : "github page"
-, "name"        : "The Strobe Type Checker for JavaScript"
-, "url"         : "https://github.com/brownplt/strobe"
-, "description" : ["TODO: documentation"]
+{ "type"        : "project page"
+, "name"        : "Strobe: A Type-Checker for JavaScript"
+, "url"         : "http://www.jswebtools.org/strobe/"
+, "description" : ["Strobe is a type-checker for JavaScript that employs several novel techniques to type-check JavaScript programs. Strobe integrates type-checking and flow analysis to type-check programs that use control and state to reason about types. Strobe can type-check programs that use dynamically constructed strings to access fields on objects. We've used Strobe's types to verify some significant pieces of code, including the ADsafe Web sandbox."]
+, "extras"      : { "github" : "https://github.com/brownplt/strobe"
+                  , "documentation" : "http://www.cs.brown.edu/research/plt/dl/flowtyping/v1/"
+                  }
 , "categories"  : ["Type checking/inference"]
 },
 
@@ -577,6 +580,13 @@ var resources = [
 , "categories"  : ["Debuggers", "Consoles"]
 },
 
+{ "type"        : "github repo"
+, "name"        : "WALA Delta"
+, "url"         : "https://github.com/wala/WALADelta"
+, "description" : ["WALA Delta is a delta debugger for JavaScript. Given a JavaScript program test.js and a predicate P such that P holds for test.js, it shrinks test.js by deleting statements, functions and sub-expressions, looking for a small sub-program of test.js on which P still holds. The predicate P can itself be implemented in JavaScript, allowing for arbitrarily complex tests. While it is distributed as part of WALA, WALA Delta can be used with any JavaScript-processing tool. All you need to use it is node.js and a number of modules that can be installed through npm (which comes installed with node.js)."]
+, "categories"  : ["Debuggers"]
+},
+
 { "type"        : "documentation"
 , "name"        : "Crossfire"
 , "url"         : "http://getfirebug.com/wiki/index.php/Crossfire"
@@ -673,6 +683,8 @@ var resources = [
 , "name"        : "netbeans"
 , "url"         : "http://netbeans.org/kb/docs/ide/javascript-editor.html"
 , "description" : ["The NetBeans IDE provides enhanced JavaScript editing features that are modeled on support already provided for Java, Ruby, and other languages. This guide provides an overview of those features."]
+, "extras"      : { "blog" : "https://blogs.oracle.com/netbeansphp/tags/javascript"
+                  }
 , "categories"  : ["IDEs"]
 },
 
