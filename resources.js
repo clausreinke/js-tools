@@ -679,6 +679,18 @@ var resources = [
 , "categories"  : ["IDEs"]
 },
 
+{ "type"        : "project page"
+, "name"        : "Brackets"
+, "url"         : "http://brackets.io/"
+, "description" : ["Brackets is an open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript. The project was created and is maintained by Adobe, and is released under an MIT License."]
+, "extras"      : { "github"       : "https://github.com/adobe/brackets"
+                  , "mailing list" : "http://groups.google.com/group/brackets-dev"
+                  , "blog"         : "http://blog.brackets.io/"
+                  , "videos"       : "http://www.youtube.com/codebrackets"
+                  }
+, "categories"  : ["IDEs"]
+},
+
 { "type"        : "documentation"
 , "name"        : "netbeans"
 , "url"         : "http://netbeans.org/kb/docs/ide/javascript-editor.html"
