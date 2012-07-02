@@ -209,6 +209,8 @@ var resources = [
 , "name"        : "syntux"
 , "url"         : "https://github.com/evilhackerdude/syntux"
 , "description" : ["A code beautifier with plugins."]
+, "extras"      : { "uses" : ["ZeParser"]
+                  }
 , "categories"  : ["Pretty printers", "Source transformation"]
 },
 
@@ -293,6 +295,8 @@ var resources = [
 , "name"        : "Zeon"
 , "url"         : "https://github.com/qfox/Zeon"
 , "description" : ["A static visual JavaScript analyzer / editor."]
+, "extras"      : { "uses" : ["ZeParser"]
+                  }
 , "categories"  : ["Editors", "Static analysis", "Linters"]
 },
 
@@ -307,6 +311,8 @@ var resources = [
 , "name"        : "jshint-autofix"
 , "url"         : "https://github.com/goatslacker/jshint-autofix"
 , "description" : ["Meant to automatically fix your lint errors in a non-destructive way."]
+, "extras"      : { "uses" : ["jshint"]
+                  }
 , "categories"  : ["Linters", "Source transformation"]
 },
 
@@ -314,6 +320,8 @@ var resources = [
 , "name"        : "doctorjs"
 , "url"         : "https://github.com/mozilla/doctorjs"
 , "description" : ["A set of static analysis tools for JavaScript. jsctags is a ctags-compatible code indexing solution for JavaScript. Its interface and output are essentially identical to Exuberant Ctags, but, instead of simply parsing the JavaScript, jsctags uses a simple form of abstract interpretation to determine which symbols are exported. This allows jsctags to achieve much better results than Exuberant Ctags. Popular libraries such as jQuery and CommonJS modules can now be meaningfully indexed.","You can use jsctags to create tags files that are usable in many editors, from Vim to TextMate (via the CodeBrowser plugin). jsctags is slated to become a key component of the Bespin IDE, where it will be used to provide code completion.","jsctags is written entirely in JavaScript, using CommonJS modules, the node.js framework, and the Narcissus engine."]
+, "extras"      : { "uses" : ["narcissus"]
+                  }
 , "categories"  : ["Type checking/inference", "Static analysis", "Tags generators"]
 },
 
@@ -335,6 +343,8 @@ var resources = [
 , "name"        : "doctorjs--"
 , "url"         : "https://github.com/pcwalton/doctorjsmm"
 , "description" : ["DoctorJS-- is a simple static analysis tool for JavaScript, written in CoffeeScript. It uses a cut-down version of Brian Hackett's type inference algorithm, which is now part of the SpiderMonkey JavaScript engine (used in Firefox). Its output is in Exuberant Ctags format.","DoctorJS-- is neither as precise nor as sophisticated (nor, right now, as complete) as its big brother DoctorJS, but on the plus side it's designed to be small and easy to hack. If you need to do anything sophisticated, please use DoctorJS instead!"]
+, "extras"      : { "uses" : ["uglify"]
+                  }
 , "categories"  : ["Type checking/inference","Static analysis"]
 },
 
@@ -384,6 +394,8 @@ var resources = [
 , "name"        : "uglify/burrito"
 , "url"         : "https://github.com/substack/node-burrito"
 , "description" : ["Given some source code and a function trace, walk the ast by expression, with a callback function that gets called with a node object."]
+, "extras"      : { "uses" : ["uglify"]
+                  }
 , "categories"  : ["AST traversal"]
 },
 
@@ -391,6 +403,8 @@ var resources = [
 , "name"        : "falafel"
 , "url"         : "https://github.com/substack/falafel"
 , "description" : ["Transform the ast on a recursive walk. This module is like burrito, except that it uses esprima instead of uglify for friendlier-looking ast nodes."]
+, "extras"      : { "uses" : ["esprima"]
+                  }
 , "categories"  : ["AST traversal"]
 },
 
@@ -398,6 +412,8 @@ var resources = [
 , "name"        : "uglify/treehugger"
 , "url"         : "https://github.com/ajaxorg/treehugger"
 , "description" : ["treehugger.js is a Javascript library for program processing. It has generic means to represent and manipulate (analyze, transform) abstract syntax trees (ASTs). It consists of three parts: A generic ASTs representation format, inspired by ATerms) that can be used to represent programs written in any language (Java, Ruby, Javascript). A set of generic traversals to query, manipulate and annotate these ASTs, inspired by Stratego/XT. A set of analyses for specific languages."]
+, "extras"      : { "uses" : ["uglify in treehugger"]
+                  }
 , "categories"  : ["AST traversal"]
 },
 
@@ -415,6 +431,8 @@ var resources = [
 , "name"        : "JSShaper"
 , "url"         : "https://github.com/olov/jsshaper"
 , "description" : ["JSShaper is an extensible framework for JavaScript syntax tree shaping. JSShaper and its plugins are implemented in JavaScript. Syntax tree shaping means performing complex manipulations to a syntax tree representation of your textual source code, and then turning it back into source code again. JSShaper goes very far to keep all your source code formatting, intendation, whitespace and comments."]
+, "extras"      : { "uses" : ["narcissus"]
+                  }
 , "categories"  : ["AST traversal","Source transformation"]
 },
 
@@ -455,6 +473,8 @@ var resources = [
 , "name"        : "es-lab"
 , "url"         : "http://code.google.com/p/es-lab/"
 , "description" : ["Experiments with proposed extensions to EcmaScript. The core of a SES (Secure EcmaScript) runtime. Membranes to be built on ES-Harmony Proxies and WeakMaps.  traits.js, a traits library for ES5 that is backwards-compatible with ES3."]
+, "extras"      : { "uses" : ["esparser"]
+                  }
 , "categories"  : ["Language extensions"]
 },
 
@@ -685,6 +705,7 @@ var resources = [
 , "extras"      : { "mailing list" : "http://groups.google.com/group/cloud9-ide"
                   , "blog"         : "http://c9.io/site/category/blog/"
                   , "videos"       : "http://www.youtube.com/user/c9ide"
+                  , "uses"         : ["ace","treehugger"]
                   }
 , "categories"  : ["IDEs"]
 },
@@ -695,6 +716,7 @@ var resources = [
 , "description" : ["Orion's objective is to create a browser-based open tool integration platform which is entirely focused on developing for the web, in the web. Tools are written in JavaScript and run in the browser. Unlike other attempts at creating browser-based development tools, this is not an IDE running in a single tab. Links work and can be shared. You can open a file in a new tab. Great care has been taken to provide a web experience for development."]
 , "extras"      : { "mailing list" : "https://dev.eclipse.org/mailman/listinfo/orion-dev"
                   , "blog"         : "http://planetorion.org/news/"
+                  , "uses"         : ["CodeMirror"]
                   }
 , "categories"  : ["IDEs"]
 },
@@ -707,6 +729,7 @@ var resources = [
                   , "mailing list" : "http://groups.google.com/group/brackets-dev"
                   , "blog"         : "http://blog.brackets.io/"
                   , "videos"       : "http://www.youtube.com/codebrackets"
+                  , "uses"         : ["CodeMirror"]
                   }
 , "categories"  : ["IDEs"]
 },
@@ -747,6 +770,7 @@ var resources = [
 , "description" : ["ShiftEdit is an online IDE for developing PHP, Ruby, Python, Perl, HTML, CSS and JavaScript via FTP, SFTP and Dropbox."]
 , "extras"      : { "mailing list" : "https://groups.google.com/group/shiftedit/about"
                   , "blog"         : "http://shiftedit.net/blog"
+                  , "uses"         : ["ace","CodeMirror"]
                   }
 , "categories"  : ["IDEs"]
 },

@@ -15,6 +15,10 @@
 .yes:after   { content: ": Yes" }
 .no:after    { content: ": No" }
 .extras *    { border: thin solid; margin: 0.1em; background-color: lightgrey }
+.uses *:first-child       { margin: 0.1em; font-style: italic; font-weight: bold }
+.uses *:not(:first-child) { border: thin solid; margin: 0.1em;
+                            /* background-color: lightgreen */
+                          }
 </style>
 
 <style id="entry-types">
@@ -99,6 +103,18 @@ function extras(r) {
     return []
 }
 
+function uses(r) {
+  if (r.extras && r.extras.hasOwnProperty("uses")) {
+    return [element("div",{"class":"uses"}
+                   ,[element("span",{},[text("Uses: ")])]
+                      .concat(r.extras.uses.map(function(u){
+                                return element("span",{},[text(u)])
+                              })))]
+  } else {
+    return []
+  }
+}
+
 function entry(r) {
   var classForType = r.type.replace(/\s/,'-');
   return [element("dt",{"class":classForType}
@@ -106,7 +122,8 @@ function entry(r) {
                        ,element("em",{},[text(" ("+r.type+")"
                                         +(r.published ? ", "+r.published : "") )])])
          ,element("dd",{"class":classForType}
-                      ,extras(r).concat([text(r.description.join(""))]))];
+                      ,extras(r).concat([text(r.description.join(""))])
+                                .concat(uses(r)))];
 }
 
 function normalize(category) { return category.replace(/\s/,'-') }
