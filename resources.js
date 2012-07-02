@@ -308,8 +308,8 @@ var resources = [
 },
 
 { "type"        : "github repo"
-, "name"        : "jshint-autofix"
-, "url"         : "https://github.com/goatslacker/jshint-autofix"
+, "name"        : "fixmyjs"
+, "url"         : "https://github.com/jshint/fixmyjs"
 , "description" : ["Meant to automatically fix your lint errors in a non-destructive way."]
 , "extras"      : { "uses" : ["jshint"]
                   }

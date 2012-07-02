@@ -73,11 +73,17 @@ function text(t) { return document.createTextNode(t) }
 function extras(r) {
   var info = [];
   function extra(x) {
+    var sub;
     if (r.extras.hasOwnProperty(x))
       if (typeof r.extras[x]==="boolean")
         info.push(element("span",{"class":r.extras[x] ? "yes" : "no"},[text(x)]))
       else if (r.extras[x].match(/^http/))
         info.push(element("a",{"href":r.extras[x]} ,[text(x)]))
+      else if (sub = r.extras[x].match(/^\[([^]*)\]\((.*)\)$/))
+        info.push(element("a",{"title":sub[1]
+                              ,"href":sub[2]} ,[text(x)]))
+      else if (r.extras[x].match(/^\(.*\)$/))
+        info.push(element("span",{"title":r.extras[x]},[text(x)]))
       else
         info.push(element("span",{},[text(x+': '+r.extras[x])]))
   }
