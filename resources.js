@@ -24,6 +24,9 @@ var resources = [
 , "name"        : "jstr"
 , "url"         : "https://github.com/clausreinke/jstr"
 , "description" : ["jstr currently consists of an updated version of jsparse, with a grammar edging ever closer to ES5."]
+, "extras"      : { "author on js-tools" : true
+                  , "active" : false
+                  }
 , "categories"  : ["Parser combinators"]
 },
 
@@ -133,9 +136,22 @@ var resources = [
 },
 
 { "type"        : "github repo"
+, "name"        : "uglify in treehugger"
+, "url"         : "https://github.com/ajaxorg/treehugger/blob/master/lib/treehugger/js/uglifyparser.js"
+, "description" : ["For treehugger.js (used in cloud9, c9.io), we forked UglifyJS and added error recovery which produces a best-effort AST even for invalid code. Of course you need this for IDEs. It's far from perfect, but seems good enough for us at the moment. It only only reports one parse error at a time though, we have to fix that at some point."]
+, "extras"      : { "error tolerance" : "full"
+                  , "AST" : true
+                  }
+, "categories"  : ["Parsers"]
+},
+
+{ "type"        : "github repo"
 , "name"        : "ZeParser"
 , "url"         : "https://github.com/qfox/zeparser"
 , "description" : ["JavaScript parser."]
+, "extras"      : { "AST" : true
+                  , "error tolerance" : "full"
+                  }
 , "categories"  : ["Parsers"]
 },
 
@@ -228,6 +244,9 @@ var resources = [
 , "name"        : "JSHint"
 , "url"         : "http://www.jshint.com/"
 , "description" : ["JSHint is a community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team's coding conventions.  It is very flexible so you can easily adjust it to your particular coding guidelines and the environment you expect your code to execute in."]
+, "extras"      : { "AST"             : false
+                  , "error tolerance" : "partial"
+                  }
 , "categories"  : ["Parsers", "Linters"]
 },
 
@@ -256,15 +275,16 @@ var resources = [
 , "name"        : "Esprima"
 , "url"         : "https://github.com/ariya/esprima"
 , "description" : ["Esprima (esprima.org) is an experimental ECMAScript (also popularly known as JavaScript) parsing infrastructure for multipurpose analysis. It is also written in ECMAScript.  Esprima can be used in a web browser or in a Node.js application."]
-, "extras"       : { "dependencies" : "none"
-                   , "AST": "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
+, "extras"       : { "AST": "https://developer.mozilla.org/en/SpiderMonkey/Parser_API"
                    , "traversal" : "http://code.google.com/p/esprima/issues/detail?id=250"
                    , "source locations" : true
                    , "comments preserved" : true
+                   , "error tolerance" : "[work in progress](http://code.google.com/p/esprima/issues/detail?id=130)"
                    , "author on js-tools" : true
                    , "active" : true
                    , "blog" : "http://ariya.ofilabs.com/tag/esprima"
                    , "mailing list" : "http://groups.google.com/group/esprima"
+                   // , "dependencies" : "none"
                    }
 , "categories"  : ["Parsers"]
 },
@@ -442,8 +462,7 @@ var resources = [
 , "name"        : "traceur"
 , "url"         : "http://code.google.com/p/traceur-compiler/"
 , "description" : ["Traceur is a JavaScript.next-to-JavaScript-of-today compiler that allows you to use features from the future today. Traceur's goal is to inform the design of new JavaScript features which are only valuable if they allow you to write better code. Traceur allows you to try out new and proposed language features today, helping you say what you mean in your code while informing the standards process.","Traceur is a compiler that takes Javascript including some new enhancements like classes and generators, and compiles it down to regular Javascript that runs in your browser. Traceur itself is written in Javascript, which means you can host the compiler directly in your pages and compile Traceur code on the fly."]
-, "extras"       : { "dependencies" : "none"
-                   , "AST": "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/trees/ParseTrees.js"
+, "extras"       : { "AST": "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/trees/ParseTrees.js"
                    , "traversal" : "http://code.google.com/p/traceur-compiler/source/browse/src/syntax/ParseTreeVisitor.js"
                    , "source locations" : true
                    , "source maps" : true
@@ -452,6 +471,7 @@ var resources = [
                    , "active" : true
                    , "feed" : "http://code.google.com/p/traceur-compiler/feeds"
                    , "mailing list" : "http://groups.google.com/group/traceur-compiler-discuss"
+                   // , "dependencies" : "none"
                    }
 , "categories"  : ["Parsers","Language extensions"]
 },
@@ -783,7 +803,7 @@ var resources = [
 { "type"        : "github repo"
 , "name"        : "JsDuck"
 , "url"         : "https://github.com/senchalabs/jsduck"
-, "description" : ["API documentation generator for Sencha JavaScript frameworks. sDuck aims to be a better documentation generator for Ext JS than the old ext-doc was. It is used by Sencha to document Ext JS 4, [Sencha Touch][touch] and several other products. The highlights of JSDuck are Markdown support and keeping you DRY by inferring a lot of information from code."]
+, "description" : ["API documentation generator for Sencha JavaScript frameworks. JsDuck aims to be a better documentation generator for Ext JS than the old ext-doc was. It is used by Sencha to document Ext JS 4, [Sencha Touch][touch] and several other products. The highlights of JSDuck are Markdown support and keeping you DRY by inferring a lot of information from code."]
 , "categories"  : ["Documentation processors"]
 },
 
