@@ -11,7 +11,9 @@
 <script type="application/javascript" src="categories.js"></script>
 
 <style>
-.closed + dd { display : none }
+.closed + dd { height: 0pt; overflow: hidden; /* hide, but in DOM */
+             /*  display : none */
+             }
 .yes:after   { content: ": Yes" }
 .no:after    { content: ": No" }
 .extras *    { border: thin solid; margin: 0.1em; background-color: lightgrey }
@@ -118,7 +120,12 @@ function uses(r) {
 function entry(r) {
   var classForType = r.type.replace(/\s/,'-');
   return [element("dt",{"class":classForType}
-                      ,[element("a",{"href":r.url}, [text(r.name)])
+                      ,[element("a",{"href":r.url
+                                    ,"name":"entry:"
+                                           +r.name.toLowerCase()
+                                                  .replace(/\s/,'-')
+                                    }
+                               , [text(r.name)])
                        ,element("em",{},[text(" ("+r.type+")"
                                         +(r.published ? ", "+r.published : "") )])])
          ,element("dd",{"class":classForType}
@@ -130,6 +137,22 @@ function normalize(category) { return category.replace(/\s/,'-') }
 
 function toggle(target) {
   target.className=(target.className==="closed")?"open":"closed";
+}
+
+function show(targetName) {
+  var targets = document.getElementsByName(targetName);
+  for(var i=0; i<targets.length; i++) {
+    var target = targets[i];
+    while (target.id!=="list") {
+      console.log(target);
+      if (target.previousSibling
+       && target.previousSibling.className==="closed") {
+        target.previousSibling.className="open";
+      }
+      target = target.parentNode;
+    }
+  }
+  targets[0] && targets[0].scrollIntoView();
 }
 
 function setAll(from,to) {
@@ -235,6 +258,16 @@ categories.map(function(cat) {
   }
   document.getElementById("checkboxes").appendChild(typeboxes);
 }());
+
+function showEntryFromHash(){
+  if (location.hash.match(/^#entry:.*$/)) {
+    console.log(location.hash);
+    show(location.hash.slice(1).toLowerCase());
+  }
+}
+
+showEntryFromHash();
+window.onhashchange = showEntryFromHash;
 
 </script>
 
