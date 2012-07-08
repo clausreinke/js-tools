@@ -139,7 +139,9 @@ function entry(r) {
                                 .concat(uses(r)))];
 }
 
-function normalize(category) { return category.replace(/\s/,'-') }
+function normalize(category) {
+  return category.toLowerCase().replace(/\s/,'-')
+}
 
 function toggle(target) {
   target.className=(target.className==="closed")?"open":"closed";
@@ -151,7 +153,9 @@ function show(targetName) {
     var target = targets[i];
     while (target.id!=="list") {
       console.log(target);
-      if (target.previousSibling
+      if (target.className==="closed") {
+        target.className="open";
+      } else if (target.previousSibling
        && target.previousSibling.className==="closed") {
         target.previousSibling.className="open";
       }
@@ -205,29 +209,38 @@ resources.map(function(r){
   })
 });
 
+function concatMap(f,arr) {
+  return [].concat.apply([],arr.map(f))
+}
+
 (function(){
   for (var g in groups)
     if (groups.hasOwnProperty(g)) {
+      var groupName = "group:"+normalize(g);
       list.appendChild( element("dt",{"class": groups[g] ? "open" : "closed"
                                      ,"onclick":"toggle(this)"},[
-                          element("a",{"name":normalize(g)},[text(g)])
+                          element("a",{"name":groupName},[text(g)])
                           ]) );
       list_groups[g] = element("dd",{},[ ]);
 
       if (groups[g])
         groups[g].map(function(cat){
-          list_groups[g].appendChild( element("dt",{"class":"closed"
-                                                   ,"onclick":"toggle(this)"},[
-                                      element("a",{"name":normalize(cat)},[text(cat)])
-                                      ]) );
+          var groupName = "group:"+normalize(cat);
+          list_groups[g]
+            .appendChild( element("dt",{"class":"closed"
+                                       ,"onclick":"toggle(this)"}
+                                 ,[ element("a",{"name":groupName}
+                                           ,[text(cat)])
+                                  ]) );
 
-          list_groups[g].appendChild( element("dd",{},[
-                                      element("dl",{},[].concat.apply([],entries[cat].map(entry)))
-                                      ]) );
+          list_groups[g]
+            .appendChild( element("dd",{},[
+                          element("dl",{},concatMap(entry,entries[cat]))
+                          ]) );
         });
       else
         list_groups[g] = element("dd",{},[
-                         element("dl",{},[].concat.apply([],entries[g].map(entry)))
+                         element("dl",{},concatMap(entry,entries[g]))
                          ])
 
       list.appendChild( list_groups[g] );
@@ -235,13 +248,14 @@ resources.map(function(r){
 })();
 
 categories.map(function(cat) {
+  var groupName = "group:"+normalize(cat);
   if (!list_groups[ group[cat] || cat ]) {
     list.appendChild( element("dt",{"class":"closed"
                                  ,"onclick":"toggle(this)"},[
-                      element("a",{"name":normalize(cat)},[text(cat)])
+                      element("a",{"name":groupName},[text(cat)])
                       ]) );
     list.appendChild( element("dd",{},[
-                      element("dl",{},[].concat.apply([],entries[cat].map(entry)))
+                      element("dl",{},concatMap(entry,entries[cat]))
                       ]) );
   }
 });
@@ -266,7 +280,8 @@ categories.map(function(cat) {
 }());
 
 function showEntryFromHash(){
-  if (location.hash.match(/^#entry:.*$/)) {
+  if (location.hash.match(/^#entry:.*$/)
+   || location.hash.match(/^#group:.*$/)) {
     console.log(location.hash);
     show(location.hash.slice(1).toLowerCase());
   }
