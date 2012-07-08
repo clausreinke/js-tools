@@ -567,7 +567,8 @@ var resources = [
 , "name"        : "Dragonfly"
 , "url"         : "http://www.opera.com/dragonfly/"
 , "description" : ["Fully-featured suite of developer tools, designed to make your job easier."]
-, "extras"      : { "blog"   : "http://my.opera.com/dragonfly/blog/"
+, "extras"      : { "github" : "https://github.com/operasoftware/dragonfly"
+                  , "blog"   : "http://my.opera.com/dragonfly/blog/"
                   , "videos" : "http://www.youtube.com/watch?v=BeTzJ-HGLo4"
                   }
 , "categories"  : ["Debuggers", "Consoles","Remote debugging"]
@@ -998,13 +999,6 @@ var resources = [
 , "name"        : "Mozilla Hacks [Developer Tools]"
 , "url"         : "http://hacks.mozilla.org/category/developer-tools/"
 , "description" : ["Developer Tools Articles. This site is here to highlight leading edge stuff that people are doing with Mozilla Firefox and the open web."]
-, "categories"  : ["Blogs"]
-},
-
-{ "type"        : "blog"
-, "name"        : "Opera Dragonfly - Bug control, accelerated"
-, "url"         : "http://my.opera.com/dragonfly/blog/"
-, "description" : ["Opera Dragonfly team blog."]
 , "categories"  : ["Blogs"]
 },
 
