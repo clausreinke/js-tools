@@ -18,9 +18,7 @@
 .no:after    { content: ": No" }
 .extras *    { border: thin solid; margin: 0.1em; background-color: lightgrey }
 .uses *:first-child       { margin: 0.1em; font-style: italic; font-weight: bold }
-.uses *:not(:first-child) { border: thin solid; margin: 0.1em;
-                            /* background-color: lightgreen */
-                          }
+.uses *:not(:first-child) { margin: 0.1em; }
 .result     { background-color: lightblue }
 #checkboxes { display: none }
 </style>
@@ -123,10 +121,12 @@ function extras(r) {
 function uses(r) {
   if (r.extras && r.extras.hasOwnProperty("uses")) {
     return [element("div",{"class":"uses"}
-                   ,[element("span",{},[text("Uses: ")])]
-                      .concat(r.extras.uses.map(function(u){
-                                return element("span",{},[text(u)])
-                              })))]
+             ,[element("span",{},[text("Uses: ")])]
+              .concat(r.extras.uses.map(function(u){
+                        return element("a"
+                                      ,{"href":'#entry:'+normalize(u)}
+                                      ,[text(u)])
+                      })))]
   } else {
     return []
   }
@@ -148,8 +148,8 @@ function entry(r) {
                                 .concat(uses(r)))];
 }
 
-function normalize(category) {
-  return category.toLowerCase().replace(/\s/,'-')
+function normalize(name) {
+  return name.toLowerCase().replace(/\s/,'-')
 }
 
 function toggle(target) {

@@ -409,7 +409,7 @@ var resources = [
 },
 
 { "type"        : "github repo"
-, "name"        : "uglify/treehugger"
+, "name"        : "treehugger"
 , "url"         : "https://github.com/ajaxorg/treehugger"
 , "description" : ["treehugger.js is a Javascript library for program processing. It has generic means to represent and manipulate (analyze, transform) abstract syntax trees (ASTs). It consists of three parts: A generic ASTs representation format, inspired by ATerms) that can be used to represent programs written in any language (Java, Ruby, Javascript). A set of generic traversals to query, manipulate and annotate these ASTs, inspired by Stratego/XT. A set of analyses for specific languages."]
 , "extras"      : { "uses" : ["uglify in treehugger"]
