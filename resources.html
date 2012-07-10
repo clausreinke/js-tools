@@ -193,6 +193,15 @@ function setAll(from,to) {
     if (elements.item(i).className===from)
       elements.item(i).className = to;
   }
+  if (to==='closed') {
+    for (var g in groups) {
+      if (groups.hasOwnProperty(g) && groups[g]) {
+        document.getElementsByName('group:'+normalize(g))[0]
+                .parentNode
+                .className = 'open';
+      }
+    }
+  }
 }
 
 function getEntryTypeCheckboxes() {
