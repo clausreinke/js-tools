@@ -21,6 +21,8 @@
 .uses *:not(:first-child) { border: thin solid; margin: 0.1em;
                             /* background-color: lightgreen */
                           }
+.result     { background-color: lightblue }
+#checkboxes { display: none }
 </style>
 
 <style id="entry-types">
@@ -147,8 +149,20 @@ function toggle(target) {
   target.className=(target.className==="closed")?"open":"closed";
 }
 
+var resultSet = [];
+function clearResultSet() {
+  resultSet.forEach(function(r){
+    r.className = r.className.replace(/result/,'');
+  });
+}
 function show(targetName) {
   var targets = document.getElementsByName(targetName);
+  if (targetName.match(/^entry:/)) {
+    for(var i=0; i<targets.length; i++) {
+      targets[i].className += "result";
+      resultSet.push(targets[i]);
+    }
+  }
   for(var i=0; i<targets.length; i++) {
     var target = targets[i];
     while (target.id!=="list") {
@@ -216,8 +230,9 @@ function concatMap(f,arr) {
 (function(){
   for (var g in groups)
     if (groups.hasOwnProperty(g)) {
-      var groupName = "group:"+normalize(g);
-      list.appendChild( element("dt",{"class": groups[g] ? "open" : "closed"
+      var groupName  = "group:"+normalize(g);
+      var openclosed =  groups[g] ? "open" : "closed";
+      list.appendChild( element("dt",{"class": openclosed
                                      ,"onclick":"toggle(this)"},[
                           element("a",{"name":groupName},[text(g)])
                           ]) );
@@ -279,16 +294,33 @@ categories.map(function(cat) {
   document.getElementById("checkboxes").appendChild(typeboxes);
 }());
 
-function showEntryFromHash(){
+function showEntriesFromHash(){
+  clearResultSet();
   if (location.hash.match(/^#entry:.*$/)
    || location.hash.match(/^#group:.*$/)) {
+
+    // direct link, open an entry or group
     console.log(location.hash);
     show(location.hash.slice(1).toLowerCase());
+
+  } else if (location.hash.match(/^#search:.*$/)) {
+
+    // search for and open matching entries
+    console.log(location.hash);
+    var pattern = location.hash.slice(8);
+    resources.filter(function(r){
+      return (r.type+r.name+r.description
+             +(r.extras?JSON.stringify(r.extras):''))
+             .match(new RegExp(pattern,'i'))
+    }).forEach(function(r){
+      show('entry:'+normalize(r.name))
+    });
+
   }
 }
 
-showEntryFromHash();
-window.onhashchange = showEntryFromHash;
+showEntriesFromHash();
+window.onhashchange = showEntriesFromHash;
 
 </script>
 
