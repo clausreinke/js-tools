@@ -173,7 +173,7 @@ function show(targetName) {
   for(var i=0; i<targets.length; i++) {
     var target = targets[i];
     while (target.id!=="list") {
-      console.log(target);
+      // console.log(target);
       if (target.className==="closed") {
         target.className="open";
       } else if (target.previousSibling
@@ -307,13 +307,13 @@ function showEntriesFromHash(){
    || location.hash.match(/^#group:.*$/)) {
 
     // direct link, open an entry or group
-    console.log(location.hash);
+    // console.log(location.hash);
     show(location.hash.slice(1).toLowerCase());
 
   } else if (location.hash.match(/^#search:.*$/)) {
 
     // search for and open matching entries
-    console.log(location.hash);
+    // console.log(location.hash);
     var pattern = location.hash.slice(8);
     resources.filter(function(r){
       return (r.type+r.name+r.description
