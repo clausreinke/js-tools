@@ -20,6 +20,20 @@
 .uses *:first-child       { margin: 0.1em; font-style: italic; font-weight: bold }
 .uses *:not(:first-child) { margin: 0.1em; }
 .result     { background-color: lightblue }
+@media (max-width:50em) {
+#toc        { display: none }
+}
+@media (min-width:50em) {
+  #header       { margin: 0em 0em 0em 14em; }
+  #toc          { position: fixed; top: 0pt; left: 0pt;
+                  max-height: 100%; overflow-y: auto;
+                  margin: 0em 0em 0em 0em;
+                  border: thin solid;
+                  font-size: small;
+                  background-color: lightgrey }
+  #toc .current { border: thin solid }
+  #list         { margin: 0em 0em 0em 14em; overflow: auto }
+}
 #checkboxes { display: none }
 </style>
 
@@ -33,6 +47,7 @@
 Please enable Javascript, or view the <a href="resources.js">raw list of resources</a>.
 </noscript>
 
+<div id="header">
 <em>A list of resources for the <a
 href="http://groups.google.com/group/js-tools/about">js-tools mailing
 list</a>
@@ -58,7 +73,9 @@ resources list is in a github repo</a>, so you can easily follow updates via git
 </p>
 
 <hr>
+</div>
 
+<dl id="toc"></dl>
 <dl id="list"></dl>
 
 <script type="application/javascript">
@@ -133,12 +150,12 @@ function uses(r) {
 }
 
 function entry(r) {
-  var classForType = r.type.replace(/\s/,'-');
+  var classForType = r.type.replace(/\s/g,'-');
   return [element("dt",{"class":classForType}
                       ,[element("a",{"href":r.url
                                     ,"name":"entry:"
                                            +r.name.toLowerCase()
-                                                  .replace(/\s/,'-')
+                                                  .replace(/\s/g,'-')
                                     }
                                , [text(r.name)])
                        ,element("em",{},[text(" ("+r.type+")"
@@ -149,31 +166,69 @@ function entry(r) {
 }
 
 function normalize(name) {
-  return name.toLowerCase().replace(/\s/,'-')
+  return name.toLowerCase().replace(/\s/g,'-')
 }
 
 function toggle(target) {
   target.className=(target.className==="closed")?"open":"closed";
 }
 
+function scroll(tocTarget) {
+  var listName   = tocTarget.children[0]
+                            .name
+                            .replace(/toc:/,'group:');
+  var listTarget = document.getElementsByName(listName)[0];
+  listTarget.scrollIntoView();
+  show(listName);
+}
+
+function findGroupForElement(elem) {
+  while (elem && !(elem.name && elem.name.match(/^group:/))) {
+    if (elem.tagName==="DT"
+     && elem.children
+     && elem.children[0].name
+     && elem.children[0].name.match(/^group:/)) {
+      elem = elem.children[0];
+    } else if (elem.tagName==="DD"
+     && elem.previousSibling
+     && elem.previousSibling.tagName==="DT") {
+      elem = elem.previousSibling;
+    } else {
+      elem = elem.parentNode;
+    }
+  }
+  return elem;
+}
+
 var resultSet = [];
 function clearResultSet() {
   resultSet.forEach(function(r){
-    r.className = r.className.replace(/result/,'');
+    r.className = r.className.replace(/ result/,'');
   });
 }
+
 function show(targetName) {
   var targets = document.getElementsByName(targetName);
+  var targetgroup,tocName,tocElem;
   if (targetName.match(/^entry:/)) {
     for(var i=0; i<targets.length; i++) {
-      targets[i].className += "result";
+      targets[i].className += " result";
       resultSet.push(targets[i]);
+
+      // find group target belongs to and highlight its toc
+      targetgroup = findGroupForElement(targets[i]);
+      if (targetgroup && targetgroup.name
+       && targetgroup.name.match(/^group:/)) {
+        tocName = targetgroup.name.replace(/^group:/,'toc:');
+        tocElem = document.getElementsByName(tocName)[0];
+        tocElem.className += " result";
+        resultSet.push(tocElem);
+      }
     }
   }
   for(var i=0; i<targets.length; i++) {
     var target = targets[i];
     while (target.id!=="list") {
-      // console.log(target);
       if (target.className==="closed") {
         target.className="open";
       } else if (target.previousSibling
@@ -229,7 +284,9 @@ function setAllFilters(value) {
 }
 
 var list    = document.getElementById("list");
-var entries = {}, categories = [], types = {}, list_groups = {};
+var toc     = document.getElementById("toc");
+var entries = {}, categories = [], types = {}
+  , list_groups = {}, toc_groups = {};
 
 resources.map(function(r){
   types["##"+r.type] = (types["##"+r.type] || 0) + 1;
@@ -246,17 +303,31 @@ function concatMap(f,arr) {
 (function(){
   for (var g in groups)
     if (groups.hasOwnProperty(g)) {
-      var groupName  = "group:"+normalize(g);
-      var openclosed =  groups[g] ? "open" : "closed";
+      var groupName    = "group:"+normalize(g);
+      var tocGroupName = "toc:"+normalize(g);
+      var openclosed   = groups[g] ? "open" : "closed";
+
+      toc.appendChild( element("dt",{"class": "toc"
+                                    ,"onclick":"scroll(this)"},[
+                         element("a",{"name":tocGroupName},[text(g)])
+                         ]) );
+      toc_groups[g] = element("dl",{},[ ]);
       list.appendChild( element("dt",{"class": openclosed
                                      ,"onclick":"toggle(this)"},[
                           element("a",{"name":groupName},[text(g)])
                           ]) );
-      list_groups[g] = element("dd",{},[ ]);
+      list_groups[g] = element("dl",{},[ ]);
 
       if (groups[g])
         groups[g].map(function(cat){
-          var groupName = "group:"+normalize(cat);
+          var groupName    = "group:"+normalize(cat);
+          var tocGroupName = "toc:"+normalize(cat);
+          toc_groups[g]
+            .appendChild( element("dt",{"class":"toc"
+                                       ,"onclick":"scroll(this)"}
+                                 ,[ element("a",{"name":tocGroupName}
+                                           ,[text(cat)])
+                                  ]) );
           list_groups[g]
             .appendChild( element("dt",{"class":"closed"
                                        ,"onclick":"toggle(this)"}
@@ -274,7 +345,8 @@ function concatMap(f,arr) {
                          element("dl",{},concatMap(entry,entries[g]))
                          ])
 
-      list.appendChild( list_groups[g] );
+      toc.appendChild( element("dd",{},[toc_groups[g]]) );
+      list.appendChild( element("dd",{},[list_groups[g]]) );
     }
 })();
 
@@ -316,13 +388,11 @@ function showEntriesFromHash(){
    || location.hash.match(/^#group:.*$/)) {
 
     // direct link, open an entry or group
-    // console.log(location.hash);
     show(location.hash.slice(1).toLowerCase());
 
   } else if (location.hash.match(/^#search:.*$/)) {
 
     // search for and open matching entries
-    // console.log(location.hash);
     var pattern = location.hash.slice(8);
     resources.filter(function(r){
       return (r.type+r.name+r.description
@@ -335,9 +405,40 @@ function showEntriesFromHash(){
   }
 }
 
+function tocScroll(tocElem) {
+  // tocElem.scrollIntoView(true);  // triggers onscroll havoc on webkit
+  var box = tocElem.getBoundingClientRect();
+  if (box.top<0) {
+    toc.scrollTop += box.top;
+  } else {
+    toc.scrollTop = box.top;
+  }
+}
+
+var tocCurrent;
+function scrollHandler(event) {
+  event.stopPropagation();
+  var x    = window.screenX+document.documentElement.clientWidth/2;
+  var y    = window.screenY;
+  var elem = document.elementFromPoint(x,y);
+  elem     = findGroupForElement(elem);
+  if (elem && elem.name && elem.name.match(/^group:/)) {
+    var tocName = elem.name.replace(/^group:/,'toc:');
+    var tocElem = document.getElementsByName(tocName)[0];
+    tocScroll(tocElem);
+    tocElem.className += " current";
+    if (tocCurrent) {
+      tocCurrent.className = tocCurrent.className
+                                       .replace(/ current/,'');
+    }
+    tocCurrent = tocElem;
+  }
+  return false;
+}
+
 showEntriesFromHash();
 window.onhashchange = showEntriesFromHash;
-
+document.onscroll   = scrollHandler;
 </script>
 
 </body>
