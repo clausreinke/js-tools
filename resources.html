@@ -169,8 +169,39 @@ function normalize(name) {
   return name.toLowerCase().replace(/\s/g,'-')
 }
 
-function toggle(target) {
-  target.className=(target.className==="closed")?"open":"closed";
+// almost standard now
+ClassListAPI = { add: function(target,token) {
+                        var classList = target.className===''
+                                      ? []
+                                      : target.className.split(' ');
+                        if (classList.indexOf(token)===-1) {
+                          classList.push(token);
+                          target.className = classList.join(' ');
+                        }
+                      },
+                 contains : function(target,token) {
+                              return (target.className.split(' ').indexOf(token)!==-1)
+                            },
+                 remove: function(target,token) {
+                           target.className = target.className.split(' ')
+                                                    .filter(function(t){
+                                                       return t!==token
+                                                     }).join(' ');
+                         },
+                 map: function(target,f) {
+                        target.className = target.className.split(' ')
+                                                 .map(f).join(' ');
+                      }
+               };
+
+function toggle(target) { // TODO: switch to ClassList-conform toggle
+  ClassListAPI.map(target,function(t){
+    switch(t) {
+      case "closed": return "open"; break;
+      case "open": return "closed"; break;
+      default: return t;
+    }
+  });
 }
 
 function scroll(tocTarget) {
@@ -203,7 +234,7 @@ function findGroupForElement(elem) {
 var resultSet = [];
 function clearResultSet() {
   resultSet.forEach(function(r){
-    r.className = r.className.replace(/ result/,'');
+    ClassListAPI.remove(r,'result');
   });
 }
 
@@ -212,7 +243,7 @@ function show(targetName) {
   var targetgroup,tocName,tocElem;
   if (targetName.match(/^entry:/)) {
     for(var i=0; i<targets.length; i++) {
-      targets[i].className += " result";
+      ClassListAPI.add(targets[i],'result');
       resultSet.push(targets[i]);
 
       // find group target belongs to and highlight its toc
@@ -221,7 +252,7 @@ function show(targetName) {
        && targetgroup.name.match(/^group:/)) {
         tocName = targetgroup.name.replace(/^group:/,'toc:');
         tocElem = document.getElementsByName(tocName)[0];
-        tocElem.className += " result";
+        ClassListAPI.add(tocElem,'result');
         resultSet.push(tocElem);
       }
     }
@@ -229,11 +260,11 @@ function show(targetName) {
   for(var i=0; i<targets.length; i++) {
     var target = targets[i];
     while (target.id!=="list") {
-      if (target.className==="closed") {
-        target.className="open";
+      if (ClassListAPI.contains(target,'closed')) {
+        toggle(target);
       } else if (target.previousSibling
-       && target.previousSibling.className==="closed") {
-        target.previousSibling.className="open";
+       && ClassListAPI.contains(target.previousSibling,'closed')) {
+        toggle(target.previousSibling);
       }
       target = target.parentNode;
     }
@@ -245,15 +276,13 @@ function setAll(from,to) {
   if (from===to) return;
   var elements = document.getElementsByTagName("dt");
   for (var i=0; i<elements.length; i++) {
-    if (elements.item(i).className===from)
-      elements.item(i).className = to;
+    if (ClassListAPI.contains(elements.item(i),from))
+      toggle(elements.item(i));
   }
   if (to==='closed') {
     for (var g in groups) {
       if (groups.hasOwnProperty(g) && groups[g]) {
-        document.getElementsByName('group:'+normalize(g))[0]
-                .parentNode
-                .className = 'open';
+        toggle(document.getElementsByName('group:'+normalize(g))[0].parentNode);
       }
     }
   }
@@ -406,7 +435,6 @@ function showEntriesFromHash(){
 }
 
 function tocScroll(tocElem) {
-  // tocElem.scrollIntoView(true);  // triggers onscroll havoc on webkit
   var box = tocElem.getBoundingClientRect();
   if (box.top<0) {
     toc.scrollTop += box.top;
@@ -423,13 +451,12 @@ function scrollHandler(event) {
   var elem = document.elementFromPoint(x,y);
   elem     = findGroupForElement(elem);
   if (elem && elem.name && elem.name.match(/^group:/)) {
-    var tocName = elem.name.replace(/^group:/,'toc:');
-    var tocElem = document.getElementsByName(tocName)[0];
-    tocScroll(tocElem);
-    tocElem.className += " current";
-    if (tocCurrent) {
-      tocCurrent.className = tocCurrent.className
-                                       .replace(/ current/,'');
+      var tocName   = elem.name.replace(/^group:/,'toc:');
+      var tocElem   = document.getElementsByName(tocName)[0];
+      tocScroll(tocElem);
+      ClassListAPI.add(tocElem,'current');
+      if (tocCurrent && tocCurrent!==tocElem) {
+        ClassListAPI.remove(tocCurrent,'current');
     }
     tocCurrent = tocElem;
   }
