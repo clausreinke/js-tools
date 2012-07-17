@@ -28,6 +28,7 @@
   #toc          { position: fixed; top: 0pt; left: 0pt;
                   max-height: 100%; overflow-y: auto;
                   margin: 0em 0em 0em 0em;
+                  padding-left: 0.5em;
                   border: thin solid;
                   font-size: small;
                   background-color: lightgrey }
@@ -438,27 +439,46 @@ function tocScroll(tocElem) {
   var box = tocElem.getBoundingClientRect();
   if (box.top<0) {
     toc.scrollTop += box.top;
-  } else {
+  } else if (box.top>document.documentElement.clientHeight) {
     toc.scrollTop = box.top;
   }
 }
 
-var tocCurrent;
+var tocCurrent,groupCurrent,scrollCurrent;
 function scrollHandler(event) {
   event.stopPropagation();
-  var x    = window.screenX+document.documentElement.clientWidth/2;
-  var y    = window.screenY;
-  var elem = document.elementFromPoint(x,y);
-  elem     = findGroupForElement(elem);
+  var scroll = document.documentElement.scrollTop||document.body.scrollTop;
+  var x      = window.screenX+document.documentElement.clientWidth/2;
+  var y      = window.screenY;
+  var elem   = document.elementFromPoint(x,y);
+  elem       = findGroupForElement(elem);
   if (elem && elem.name && elem.name.match(/^group:/)) {
+    var elemBox         = elem.getBoundingClientRect();
+    var elemGroupBox    = elem.parentNode.nextSibling.getBoundingClientRect();
+    var currentTop      = groupCurrent && groupCurrent.getBoundingClientRect().top;
+    var currentGroupBox = groupCurrent && groupCurrent.parentNode
+                                                      .nextSibling
+                                                      .getBoundingClientRect();
+    if (!groupCurrent
+      ||(scroll>scrollCurrent
+       &&Math.abs(currentGroupBox.bottom)>=Math.abs(elemBox.top))
+      ||(scrollCurrent>scroll
+       &&Math.abs(currentTop)>=Math.abs(elemGroupBox.bottom))) { // don't flicker in gaps
+                                                     // TODO: not quite right, tends to
+                                                     // skip top groups when scrolling up
+      groupCurrent  = elem;
+      scrollCurrent = scroll;
       var tocName   = elem.name.replace(/^group:/,'toc:');
       var tocElem   = document.getElementsByName(tocName)[0];
       tocScroll(tocElem);
       ClassListAPI.add(tocElem,'current');
       if (tocCurrent && tocCurrent!==tocElem) {
         ClassListAPI.remove(tocCurrent,'current');
+      }
+      tocCurrent = tocElem;
     }
-    tocCurrent = tocElem;
+  } else if ((document.documentElement.scrollTop||document.body.scrollTop)===0) {
+    toc.scrollTop = 0;
   }
   return false;
 }
