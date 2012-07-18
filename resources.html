@@ -45,10 +45,6 @@ a[name^="group:"]:hover                 { font-weight: bold }
   #toc .current { border: thin solid }
   #list         { margin: 0em 0em 0em 14em; overflow: auto }
 }
-#checkboxes { display: none }
-</style>
-
-<style id="entry-types">
 </style>
 
 </head>
@@ -74,13 +70,6 @@ resources list is in a github repo</a>, so you can easily follow updates via git
 <em>Click individual topic headings to open or close, or</em>
 <button type=button onclick="setAll('closed','open')">open all topics</button>
 <button type=button onclick="setAll('open','closed')">close all topics</button>
-</p>
-
-<p id="checkboxes">
-<em>Filter by type of entry:</em>
-<button type=button onclick="setAllFilters(false)">deselect all</button>
-<button type=button onclick="setAllFilters(true)">select all</button>
-<br>
 </p>
 
 <hr>
@@ -164,9 +153,7 @@ function entry(r) {
   var classForType = r.type.replace(/\s/g,'-');
   return [element("dt",{"class":classForType}
                       ,[element("a",{"href":r.url
-                                    ,"name":"entry:"
-                                           +r.name.toLowerCase()
-                                                  .replace(/\s/g,'-')
+                                    ,"name":"entry:"+normalize(r.name)
                                     }
                                , [text(r.name)])
                        ,element("em",{},[text(" ("+r.type+")"
@@ -299,37 +286,11 @@ function setAll(from,to) {
   }
 }
 
-function getEntryTypeCheckboxes() {
-  // not in older browsers
-  // return document.getElementsByClassName("entryType");
-  return document.getElementsByTagName("input"); // need filter if adding inputs
-}
-
-function toggleEntryTypes() {
-  var boxes = getEntryTypeCheckboxes();
-  var style = "";
-  for (var b=0; b<boxes.length; b++) {
-    var box = boxes.item(b);
-    style += '.'+box.name.replace(/\s/,'-')+"{display:"+(box.checked?"block":"none")+"}\n"
-  }
-  document.getElementById("entry-types").innerHTML = style;
-}
-
-function setAllFilters(value) {
-  var boxes = getEntryTypeCheckboxes();
-  for (var b=0; b<boxes.length; b++) {
-    var box = boxes.item(b).checked = value;
-  }
-  toggleEntryTypes();
-}
-
 var list    = document.getElementById("list");
 var toc     = document.getElementById("toc");
-var entries = {}, categories = [], types = {}
-  , list_groups = {}, toc_groups = {};
+var entries = {}, categories = [], list_groups = {}, toc_groups = {};
 
 resources.map(function(r){
-  types["##"+r.type] = (types["##"+r.type] || 0) + 1;
   r.categories.map( function(cat){
     cat in entries || ((entries[cat] = []) && categories.push(cat));
     entries[cat].push(r)
@@ -402,25 +363,6 @@ categories.map(function(cat) {
                       ]) );
   }
 });
-
-(function() {
-  var typeboxes = element("form",{"id":"typeboxes"},[]);
-  for (var t in types) {
-    var type = t.substring(2);
-    if (types.hasOwnProperty(t)) {
-      typeboxes.appendChild(element("label"
-                                   ,{}
-                                   ,[element("input"
-                                            ,{"type":"checkbox"
-                                             ,"name":type
-                                             ,"class":"entryType"
-                                             ,"onchange":"toggleEntryTypes()"
-                                             ,"checked":true}
-                                            ,[]),text(type+"("+types[t]+") ")]));
-    }
-  }
-  document.getElementById("checkboxes").appendChild(typeboxes);
-}());
 
 function showEntriesFromHash(){
   clearResultSet();
