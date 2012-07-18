@@ -635,6 +635,13 @@ var resources = [
 , "categories"  : ["Remote debugging"]
 },
 
+{ "type"        : "project page"
+, "name"        : "Illuminations for Developers"
+, "url"         : "http://www.illuminations-for-developers.com/"
+, "description" : ["Illuminations is a tool that extends Firebug with the knowledge of several JavaScript frameworks."]
+, "categories"  : ["Debuggers"]
+},
+
 //profiling
 //
 //  time profiling (computation and communication)
