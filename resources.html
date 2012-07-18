@@ -11,6 +11,16 @@
 <script type="application/javascript" src="categories.js"></script>
 
 <style>
+a[name^="toc:"]:hover,
+a[name^="group:"]:hover                 { font-weight: bold }
+.closed>a[name^="group:"]:hover::after  { font-weight: normal;
+                                          font-style: italic;
+                                          content: " (click to open topic)"
+                                        }
+.open>a[name^="group:"]:hover::after    { font-weight: normal;
+                                          font-style: italic;
+                                          content: " (click to close topic)"
+                                        }
 .closed + dd { height: 0pt; overflow: hidden; /* hide, but in DOM */
              /*  display : none */
              }
@@ -61,7 +71,7 @@ resources list is in a github repo</a>, so you can easily follow updates via git
 <hr>
 
 <p id="buttons">
-<em>Click individual topics to open or close, or</em>
+<em>Click individual topic headings to open or close, or</em>
 <button type=button onclick="setAll('closed','open')">open all topics</button>
 <button type=button onclick="setAll('open','closed')">close all topics</button>
 </p>
@@ -76,7 +86,7 @@ resources list is in a github repo</a>, so you can easily follow updates via git
 <hr>
 </div>
 
-<dl id="toc"></dl>
+<dl id="toc" title="toc: click topic headings to open and scroll into view"></dl>
 <dl id="list"></dl>
 
 <script type="application/javascript">
