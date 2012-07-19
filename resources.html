@@ -11,7 +11,6 @@
 <script type="application/javascript" src="categories.js"></script>
 
 <style>
-a[name^="toc:"]:hover,
 a[name^="group:"]:hover                 { font-weight: bold }
 .closed>a[name^="group:"]:hover::after  { font-weight: normal;
                                           font-style: italic;
@@ -203,12 +202,10 @@ function toggle(target) { // TODO: switch to ClassList-conform toggle
 }
 
 function scroll(tocTarget) {
-  var listName   = tocTarget.children[0]
-                            .name
-                            .replace(/toc:/,'group:');
-  var listTarget = document.getElementsByName(listName)[0];
-  listTarget.scrollIntoView();
-  show(listName);
+  var listName  = tocTarget.children[0]
+                           .name
+                           .replace(/toc:/,'group:');
+  location.hash = '#'+listName;
 }
 
 function findGroupForElement(elem) {
@@ -308,9 +305,11 @@ function concatMap(f,arr) {
       var tocGroupName = "toc:"+normalize(g);
       var openclosed   = groups[g] ? "open" : "closed";
 
-      toc.appendChild( element("dt",{"class": "toc"
-                                    ,"onclick":"scroll(this)"},[
-                         element("a",{"name":tocGroupName},[text(g)])
+      toc.appendChild( element("dt",{"class": "toc"},[
+                         element("a",{"name":tocGroupName
+                                     ,"href":'#'+groupName
+                                     }
+                                    ,[text(g)])
                          ]) );
       toc_groups[g] = element("dl",{},[ ]);
       list.appendChild( element("dt",{"class": openclosed
@@ -324,9 +323,10 @@ function concatMap(f,arr) {
           var groupName    = "group:"+normalize(cat);
           var tocGroupName = "toc:"+normalize(cat);
           toc_groups[g]
-            .appendChild( element("dt",{"class":"toc"
-                                       ,"onclick":"scroll(this)"}
-                                 ,[ element("a",{"name":tocGroupName}
+            .appendChild( element("dt",{"class":"toc"}
+                                 ,[ element("a",{"name":tocGroupName
+                                                ,"href":'#'+groupName
+                                                }
                                            ,[text(cat)])
                                   ]) );
           list_groups[g]
