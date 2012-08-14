@@ -628,6 +628,16 @@ var resources = [
 , "categories"  : ["Debuggers"]
 },
 
+{ "type"        : "project page"
+, "name"        : "Illuminations for Developers"
+, "url"         : "http://www.illuminations-for-developers.com/"
+, "description" : ["Illuminations is a tool that extends Firebug with the knowledge of several JavaScript frameworks."]
+, "extras"      : { "blog" : "http://www.illuminations-for-developers.com/blog/"
+                  , "uses" : ["Firebug"]
+                  }
+, "categories"  : ["Debuggers"]
+},
+
 { "type"        : "documentation"
 , "name"        : "Crossfire"
 , "url"         : "http://getfirebug.com/wiki/index.php/Crossfire"
