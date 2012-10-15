@@ -291,6 +291,16 @@ var resources = [
 , "categories"  : ["Parsers"]
 },
 
+{ "type"        : "project page"
+, "name"        : "acorn"
+, "url"         : "http://marijnhaverbeke.nl/acorn/"
+, "description" : ["A small, fast, JavaScript-based JavaScript parser"]
+, "extras"      : { "github" : "https://github.com/marijnh/acorn/"
+                  , "AST" : "https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API"
+                  }
+, "categories"  : ["Parsers"]
+},
+
 { "type"        : "github repo"
 , "name"        : "Zeon"
 , "url"         : "https://github.com/qfox/Zeon"
@@ -456,6 +466,43 @@ var resources = [
 },
 
 { "type"        : "github repo"
+, "name"        : "Heatfiler"
+, "url"         : "https://github.com/qfox/Heatfiler/"
+, "description" : ["Heatfiler allows you to easily run through your code and find the heavy points. Alternatively, you can use it to figure out which parts of your code are unused. It does this, for both cases, with a visueal heatmap which updates live as the code runs. It can either run on the same page (profiler and code) or in two different tabs, communicating through localStorage.","You can also easily integrate Heatfiler in an existing project by including the script and adding type attributes to other script tags with the value of profile (include in profiler) and noprofile (load and execute, but do not profile). This will work as long as your project includes all files in the html (so requirejs and related loaders are not supported).","This project was hacked together in about two days. It uses ZeParser as the JS parsing and rewriting backend."]
+, "extras"      : { "uses" : ["ZeParser"]
+                  }
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Istanbul"
+, "url"         : "https://github.com/yahoo/Istanbul"
+, "description" : ["Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale."]
+, "extras"      : { "uses" : ["esprima"]
+                  }
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Cover"
+, "url"         : "https://github.com/itay/node-cover"
+, "description" : ["Cover gives you the ability to collect code-coverage for your projects, using whatever unit test framework you want, and all using native JavaScript. It also comes bundled with pre-defined reporters, such as HTML and CLI output, so you can easily see where you are missing coverage."]
+, "extras"      : { "uses" : ["esprima"]
+                  }
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "type"        : "project page"
+, "name"        : "coveraje"
+, "url"         : "http://coveraje.github.com/"
+, "description" : ["coveraje is a code and test coverage tool for javascript - written in javascript.  It shows which instructions are executed - and how often they are executed during a test run. Thus it can be used to write proper tests, remove unused parts of your source code, and/or optimize functions that are really used often.  Main goal was to create coverage reports for javascript programs executed in node. A proxy server to execute javascript in web sites is in work."]
+, "extras"      : { "github"       : "https://github.com/coveraje/coveraje"
+                  , "uses"         : ["esprima"]
+                  }
+, "categories"  : ["Source instrumentation"]
+},
+
+{ "type"        : "github repo"
 , "name"        : "detective"
 , "url"         : "https://github.com/substack/node-detective"
 , "description" : ["Find all calls to require() no matter how crazily nested using a proper walk of the AST."]
@@ -497,9 +544,55 @@ var resources = [
 },
 
 { "type"        : "project page"
+, "name"        : "TypeScript"
+, "url"         : "http://www.typescriptlang.org/"
+, "description" : ["TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source."]
+, "extras"      : { "discussion" : "http://typescript.codeplex.com/discussions"
+                  , "documentation" : "http://go.microsoft.com/fwlink/?LinkId=267238"
+                  , "source repo" : "http://typescript.codeplex.com/SourceControl/BrowseLatest"
+                  , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript"
+                  , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Steve-Lucco-and-Luke-Hoban-Inside-TypeScript" // TODO: only first extra entry is used
+                  , "feed" : "http://typescript.codeplex.com/project/feeds/rss"
+                  }
+, "categories"  : ["Language extensions"]
+},
+
+// TODO: mark commercial
+{ "type"        : "project page"
+, "name"        : "Mascara"
+, "url"         : "http://www.mascaraengine.com/"
+, "description" : ["Mascara enhances JavaScript with powerful features like classes, namespaces, type-verification and a host of other improvements. It compiles the enhanced JavaScript into 'object code', which will run in any browser today.","Mascara is used at development time, typically hooked into the editor. It analyzes and verifies the enhanced JavaScript files, and generates an output file which can then be deployed to the web along with other assets. There is no runtime dependencies on the server or client. The warning and hints from the compiler helps you locate and fix bugs during development.","The (optional) Eclipse plugin supports Mascara directly in the editor, with hints, code completion etc."]
+, "extras"      : { "mailing list" : "http://groups.google.com/group/firebug"
+                  , "documentation" : "http://www.mascaraengine.com/doc"
+                  , "blog" : "http://blog.mascaraengine.com/"
+                  }
+, "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "Harmonizr"
+, "url"         : "https://github.com/jdiamond/harmonizr"
+, "description" : ["A transpiler that brings tomorrow's Harmony to today's JavaScript. Features: Harmony modules to AMD, Node.js, or Revealing Module Pattern; Shorthand properties; Method definitions; Arrow functions (requires Function.prototype.bind); Class declarations"]
+, "extras"      : { "uses" : ["esprima"]
+                  }
+, "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "project page"
 , "name"        : "reflect.js/es-next"
 , "url"         : "http://zaach.github.com/reflect.js/es-next/"
 , "description" : ["This is an experimental ES.next->ES5 transpiler.  What works: the <| operator -- defines the [[Prototype]] of a literal (uses __proto__); the .{ operator -- extends the LHS object with properties from an object literal; object literal property shorthand -- {x, y} -> {x: x, y: y}"]
+, "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "project page"
+, "name"        : "sweet.js"
+, "url"         : "http://sweetjs.org/"
+, "description" : ["Sweet.js brings hygienic macros from languages like Scheme and Rust to JavaScript. Macros allow you to sweeten the syntax of JavaScript and craft the language you've always wanted."]
+, "extras"      : { "github" : "https://github.com/mozilla/sweet.js"
+                  , "documentation" : "https://github.com/mozilla/sweet.js/wiki"
+                  , "videos" : "https://air.mozilla.org/sweetjs/"
+                  }
 , "categories"  : ["Language extensions"]
 },
 
@@ -786,6 +879,16 @@ var resources = [
 , "categories"  : ["IDEs"]
 },
 
+{ "type"        : "github repo"
+, "name"        : "Scripted"
+, "url"         : "https://github.com/scripted-editor/scripted"
+, "description" : ["Scripted is a light-weight browser-based editor. Although browser-based the client and server both run locally. Scripted can edit any text file on your local system and provides syntax highlighting and simple content assist for HTML and CSS files, but the focus is currently on providing the best JavaScript editing experience possible. The goal of Scripted is to provide a sophisticated editing experience for your JavaScript files while at the same time remaining fast and easy to use. The editor component of Scripted has been reused from Eclipse Orion."]
+, "extras"      : { "mailing list" : "https://groups.google.com/forum/#!forum/scripted-dev"
+                  , "uses"         : ["orion","CodeMirror","esprima"]
+                  }
+, "categories"  : ["IDEs"]
+},
+
 { "type"        : "project page"
 , "name"        : "jstestdriver"
 , "url"         : "http://code.google.com/p/js-test-driver/"
@@ -890,7 +993,7 @@ var resources = [
 , "name"        : "List of languages that compile to JS"
 , "url"         : "https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS"
 , "description" : [""]
-, "categories"  : ["Other resource listings"]
+, "categories"  : ["Other resource listings","Language extensions"]
 },
 
 { "type"        : "collection"
