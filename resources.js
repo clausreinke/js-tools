@@ -1,7 +1,7 @@
 // TODO: add library dependencies
 //       add tool dependencies/implemented in?
 //         (what about alternative dependency sets?)
-//       document licenses?
+//       document licenses? mark commercial vs free (partially done)
 //       escape for HTML
 
 var resources = [
@@ -521,6 +521,8 @@ var resources = [
 , "url"         : "http://code.google.com/p/es-lab/"
 , "description" : ["Experiments with proposed extensions to EcmaScript. The core of a SES (Secure EcmaScript) runtime. Membranes to be built on ES-Harmony Proxies and WeakMaps.  traits.js, a traits library for ES5 that is backwards-compatible with ES3."]
 , "extras"      : { "uses" : ["esparser"]
+                  , "targets" : "ES5"
+                  , "license" : "Apache License 2.0"
                   }
 , "categories"  : ["Language extensions"]
 },
@@ -539,6 +541,8 @@ var resources = [
                    , "feed" : "http://code.google.com/p/traceur-compiler/feeds"
                    , "mailing list" : "http://groups.google.com/group/traceur-compiler-discuss"
                    // , "dependencies" : "none"
+                   , "targets" : "ES5"
+                   , "license" : "Apache License 2.0"
                    }
 , "categories"  : ["Parsers","Language extensions"]
 },
@@ -553,11 +557,12 @@ var resources = [
                   , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript"
                   , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Steve-Lucco-and-Luke-Hoban-Inside-TypeScript" // TODO: only first extra entry is used
                   , "feed" : "http://typescript.codeplex.com/project/feeds/rss"
+                  , "targets" : "ES5"
+                  , "license" : "Apache License 2.0"
                   }
 , "categories"  : ["Language extensions"]
 },
 
-// TODO: mark commercial
 { "type"        : "project page"
 , "name"        : "Mascara"
 , "url"         : "http://www.mascaraengine.com/"
@@ -565,6 +570,8 @@ var resources = [
 , "extras"      : { "mailing list" : "http://groups.google.com/group/firebug"
                   , "documentation" : "http://www.mascaraengine.com/doc"
                   , "blog" : "http://blog.mascaraengine.com/"
+                  , "targets" : "ES3"
+                  , "license" : "commercial (free for educational/non-commercial use)"
                   }
 , "categories"  : ["Language extensions"]
 },
@@ -574,6 +581,17 @@ var resources = [
 , "url"         : "https://github.com/jdiamond/harmonizr"
 , "description" : ["A transpiler that brings tomorrow's Harmony to today's JavaScript. Features: Harmony modules to AMD, Node.js, or Revealing Module Pattern; Shorthand properties; Method definitions; Arrow functions (requires Function.prototype.bind); Class declarations"]
 , "extras"      : { "uses" : ["esprima"]
+                  , "license" : "MIT"
+                  }
+, "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "six"
+, "url"         : "https://github.com/matthewrobb/six"
+, "description" : ["Six is a language super-set of JavaScript that enables new syntactic features from the 6th edition of ECMAScript to be used, through a transpiler, in your scripts today.  WARNING: Still in a very early state, proceed with caution."]
+, "extras"      : { "uses" : ["esprima"]
+                  , "license" : "MIT"
                   }
 , "categories"  : ["Language extensions"]
 },
@@ -582,6 +600,8 @@ var resources = [
 , "name"        : "reflect.js/es-next"
 , "url"         : "http://zaach.github.com/reflect.js/es-next/"
 , "description" : ["This is an experimental ES.next->ES5 transpiler.  What works: the <| operator -- defines the [[Prototype]] of a literal (uses __proto__); the .{ operator -- extends the LHS object with properties from an object literal; object literal property shorthand -- {x, y} -> {x: x, y: y}"]
+, "extras"      : { "targets" : "ES5"
+                  }
 , "categories"  : ["Language extensions"]
 },
 
@@ -592,6 +612,7 @@ var resources = [
 , "extras"      : { "github" : "https://github.com/mozilla/sweet.js"
                   , "documentation" : "https://github.com/mozilla/sweet.js/wiki"
                   , "videos" : "https://air.mozilla.org/sweetjs/"
+                  , "license" : "BSD"
                   }
 , "categories"  : ["Language extensions"]
 },
@@ -600,6 +621,8 @@ var resources = [
 , "name"        : "Experimental Harmony Features"
 , "url"         : "https://github.com/allenwb/narcissus/blob/master/harmony-extensions.md"
 , "description" : ["This version of Narcissus supports the following experimental language extensions. Concise Method Properties in Object Literals. Comma Optional After Method and Accessor Properties in Object Literals. The <| Operator. super References in Methods. Object Extension Literals. Computed Property Names in Object Literals. To use these extensions njs must be invoked using the -H switch. Note that Narcissus already supports various other Harmony features such as const and let declarations."]
+, "extras"      : { "license" : "MPL 1.1, GPL 2.0, LGPL 2.1"
+                  }
 , "categories"  : ["Language extensions"]
 },
 

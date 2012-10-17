@@ -28,6 +28,9 @@ a[name^="group:"]:hover                 { font-weight: bold }
 .extras *    { border: thin solid; margin: 0.1em; background-color: lightgrey }
 .uses *:first-child       { margin: 0.1em; font-style: italic; font-weight: bold }
 .uses *:not(:first-child) { margin: 0.1em; }
+.license:before       { content: "License: ";
+                        margin: 0.1em; font-style: italic; font-weight: bold }
+.license              { margin: 0.1em; font-style: italic; }
 .result     { background-color: lightblue }
 @media (max-width:50em) {
 #toc        { display: none }
@@ -131,6 +134,7 @@ function extras(r) {
     ,"videos"
     ,"author on js-tools"
     ,"dependencies"
+    ,"targets"
     ].forEach(extra);
 
     return [element("div",{"class":"extras"},info)]
@@ -152,6 +156,17 @@ function uses(r) {
   }
 }
 
+function license(r) {
+  if (r.extras && r.extras.hasOwnProperty("license")) {
+    return [element("div",{"class":"license"
+                          ,"title":"please verify license on project site"}
+             ,[text(r.extras.license)]
+              )]
+  } else {
+    return []
+  }
+}
+
 function entry(r) {
   var classForType = r.type.replace(/\s/g,'-');
   return [element("dt",{"class":classForType}
@@ -163,7 +178,8 @@ function entry(r) {
                                         +(r.published ? ", "+r.published : "") )])])
          ,element("dd",{"class":classForType}
                       ,extras(r).concat([text(r.description.join(""))])
-                                .concat(uses(r)))];
+                                .concat(uses(r))
+                                .concat(license(r)))];
 }
 
 function normalize(name) {
