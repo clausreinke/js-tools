@@ -115,6 +115,16 @@ var resources = [
 },
 
 { "type"        : "github repo"
+, "name"        : "Continuum"
+, "url"         : "https://github.com/Benvie/continuum"
+, "description" : ["A next-generation JavaScript (ES6) Virtual Machine written in last generation JavaScript (ES3). Continuum is a JavaScript virtual machine built in JavaScript. It assembles bytecode from sourcecode and executes it an ES6 runtime environment. The code of the VM is written in ES3 level JavaScript, which means it can run in browsers as old as IE6. (though currently it's only regularly tested in IE8+ and there's probably some kinks to work out in older IE's)."]
+, "extras"      : { "targets" : "ES3"
+                  , "license" : "MIT"
+                  }
+, "categories"  : ["Javascript engines","Language extensions"]
+},
+
+{ "type"        : "github repo"
 , "name"        : "lv5"
 , "url"         : "https://github.com/Constellation/iv"
 , "description" : ["lv5 is an ECMA262 5.1 engine, written in C++. This thread on es-discuss has more info on features and test262 results: https://mail.mozilla.org/pipermail/es-discuss/2011-October/017528.html ."]
@@ -557,7 +567,7 @@ var resources = [
                   , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript"
                   , "videos" : "http://channel9.msdn.com/posts/Anders-Hejlsberg-Steve-Lucco-and-Luke-Hoban-Inside-TypeScript" // TODO: only first extra entry is used
                   , "feed" : "http://typescript.codeplex.com/project/feeds/rss"
-                  , "targets" : "ES5"
+                  , "targets" : "ES5/ES3"
                   , "license" : "Apache License 2.0"
                   }
 , "categories"  : ["Language extensions"]
@@ -591,6 +601,16 @@ var resources = [
 , "url"         : "https://github.com/matthewrobb/six"
 , "description" : ["Six is a language super-set of JavaScript that enables new syntactic features from the 6th edition of ECMAScript to be used, through a transpiler, in your scripts today.  WARNING: Still in a very early state, proceed with caution."]
 , "extras"      : { "uses" : ["esprima"]
+                  , "license" : "MIT"
+                  }
+, "categories"  : ["Language extensions"]
+},
+
+{ "type"        : "github repo"
+, "name"        : "JS Module Transpiler"
+, "url"         : "https://github.com/wycats/js_module_transpiler"
+, "description" : ["JS Module Transpiler is an experimental compiler that allows you to write your JavaScript using a subset of the current ES6 module syntax, and compile it into AMD modules (and soon, CommonJS modules). JS Module Transpiler will track ES6 syntax, and not attempt to maintain backwards compatibility with syntax that ultimately did not succeed as part of ES6. This compiler provides a way to experiment with ES6 syntax in real world scenarios to see how the syntax holds up. It also provides a nicer, more declarative way to write AMD (or CommonJS) modules."]
+, "extras"      : { "targets" : "ES5"
                   , "license" : "MIT"
                   }
 , "categories"  : ["Language extensions"]
@@ -1205,6 +1225,15 @@ var resources = [
 , "url"         : "http://getfirebug.com/doc/crossfire/crossfire-splash-2011.pdf"
 , "description" : ["We present Crossfire, a system and protocol designed to enable debugging ofWeb pages in another process or machine.  Issues specific to any oneWeb browser are abstracted by the protocol and implementation, allowing a new generation of OpenWeb development tools to be implemented.We discuss the major refactoring of Firebug, the open source Web debugging tool to use Crossfire and the interplay between goals and resources that such an effort requires. In addition to the cross-browser focus of the protocol, we also discuss support for extensions which themselves will be cross-browser and client-server."]
 , "categories"  : ["Publications","Remote debugging"]
+},
+
+{ "type"        : "publication"
+, "name"        : "CFA2: Pushdown Flow Analysis for Higher-Order Languages"
+, "authors"     : "Dimitrios Vardoulakis"
+, "published"   : "Ph.D. dissertation 2012"
+, "url"         : "http://www.ccs.neu.edu/home/dimvar/papers/diss.pdf"
+, "description" : ["In a higher-order language, the dominant control-flow mechanism is function call and return. Most higher-order flow analyses do not handle call and return well: they remember only a bounded number of pending calls because they approximate programs as finite-state machines. Call/return mismatch introduces precision-degrading spurious execution paths and increases the analysis time.","We present flow analyses that provide unbounded call/return matching in a general setting: our analyses apply to typed and untyped languages, with first-class functions, side effects, tail calls and first-class control. This is made possible by several individual techniques. We generalize Sharir and Pnueli’s summarization technique to handle expressive control constructs, such as tail calls and first-class continuations. We propose a syntactic classification of variable references that allows precise lookups for non-escaping references and falls back to a conservative approximation for references captured in closures. We show how to structure a flow analysis like a traditional interpreter based on big-step semantics. With this formulation, expressions use the analysis results of their subexpressions directly, which minimizes caching and makes the analysis faster. We present experimental results from two implementations for Scheme and JavaScript, which show that our analyses are precise and fast in practice."]
+, "categories"  : ["Publications"]
 },
 
 //engines/browsers
