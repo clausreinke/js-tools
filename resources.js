@@ -307,6 +307,12 @@ var resources = [
 , "description" : ["A small, fast, JavaScript-based JavaScript parser"]
 , "extras"      : { "github" : "https://github.com/marijnh/acorn/"
                   , "AST" : "https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API"
+                  , "traversal" : "https://github.com/marijnh/acorn/blob/master/util/walk.js"
+                  , "source locations" : true
+                  , "comments preserved" : true
+                  , "error tolerance" : "https://github.com/marijnh/acorn/blob/master/acorn_loose.js"
+                  , "active" : true
+                  // , "dependencies" : "none"
                   }
 , "categories"  : ["Parsers"]
 },
@@ -1232,7 +1238,7 @@ var resources = [
 , "authors"     : "Dimitrios Vardoulakis"
 , "published"   : "Ph.D. dissertation 2012"
 , "url"         : "http://www.ccs.neu.edu/home/dimvar/papers/diss.pdf"
-, "description" : ["In a higher-order language, the dominant control-flow mechanism is function call and return. Most higher-order flow analyses do not handle call and return well: they remember only a bounded number of pending calls because they approximate programs as finite-state machines. Call/return mismatch introduces precision-degrading spurious execution paths and increases the analysis time.","We present flow analyses that provide unbounded call/return matching in a general setting: our analyses apply to typed and untyped languages, with first-class functions, side effects, tail calls and first-class control. This is made possible by several individual techniques. We generalize Sharir and Pnueli’s summarization technique to handle expressive control constructs, such as tail calls and first-class continuations. We propose a syntactic classification of variable references that allows precise lookups for non-escaping references and falls back to a conservative approximation for references captured in closures. We show how to structure a flow analysis like a traditional interpreter based on big-step semantics. With this formulation, expressions use the analysis results of their subexpressions directly, which minimizes caching and makes the analysis faster. We present experimental results from two implementations for Scheme and JavaScript, which show that our analyses are precise and fast in practice."]
+, "description" : ["In a higher-order language, the dominant control-flow mechanism is function call and return. Most higher-order flow analyses do not handle call and return well: they remember only a bounded number of pending calls because they approximate programs as finite-state machines. Call/return mismatch introduces precision-degrading spurious execution paths and increases the analysis time.","We present flow analyses that provide unbounded call/return matching in a general setting: our analyses apply to typed and untyped languages, with first-class functions, side effects, tail calls and first-class control. This is made possible by several individual techniques. We generalize Sharir and Pnueli's summarization technique to handle expressive control constructs, such as tail calls and first-class continuations. We propose a syntactic classification of variable references that allows precise lookups for non-escaping references and falls back to a conservative approximation for references captured in closures. We show how to structure a flow analysis like a traditional interpreter based on big-step semantics. With this formulation, expressions use the analysis results of their subexpressions directly, which minimizes caching and makes the analysis faster. We present experimental results from two implementations for Scheme and JavaScript, which show that our analyses are precise and fast in practice."]
 , "categories"  : ["Publications"]
 },
 
