@@ -12,7 +12,12 @@ var resources = [
 , "description" : ["PEG.js is a simple parser generator for JavaScript that produces fast parsers with excellent error reporting. You can use it to process complex data or computer languages and build transformers, interpreters, compilers and other tools easily."]
 , "categories"  : ["Parser generators"]
 },
-
+{ "type"        : "github repo"
+, "name"        : "SoftXpath.js"
+, "url"         : "https://github.com/softxml/SoftXpath"
+, "description" : ["JavaScript library for parsing complex XML documents using powerful Xpath expressions."]
+, "categories"  : ["Parser generators"]
+},
 { "type"        : "github repo"
 , "name"        : "jsparse"
 , "url"         : "http://github.com/doublec/jsparse"
